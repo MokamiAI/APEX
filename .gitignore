@@ -1,0 +1,29 @@
+# dependencies
+/node_modules
+
+# Next.js build output
+/.next/
+/out/
+
+# production
+/build
+
+# local env files
+.env
+.env*.local
+
+# runtime-generated data (local dev lead capture — never real production data)
+leads.json
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editor/OS
+.DS_Store
+Thumbs.db
+*.swp
+
+# vercel
+.vercel

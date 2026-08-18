@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Matches the real APEX product's own tokens (apex.intermediateds.co.za) */
+  --navy-950: #0d1f16;
+  --navy-900: #16301f;
+  --teal-600: #235e3f;
+  --teal-500: #2f7a52;
+  --amber-500: #1c4532;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-slate-600 antialiased bg-white;
+}
+
+::selection {
+  background: rgba(216, 243, 220, 0.55);
+}
+
+/* ---------- Typography helpers ---------- */
+.font-display {
+  font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.num {
+  font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+/* ---------- Dark section base ---------- */
+.section-dark {
+  @apply bg-navy-950 text-slate-300;
+}
+.section-dark h2,
+.section-dark h3 {
+  @apply text-white;
+}
+
+/* ---------- Eyebrow / label (never a pill with a pulsing dot) ---------- */
+.eyebrow {
+  @apply num text-[13px] uppercase tracking-[0.18em] text-teal-500 font-medium;
+}
+
+/* ---------- Product UI panel (high-fidelity enterprise simulation) ---------- */
+.ui {
+  @apply bg-navy-900 border border-navy-600 rounded-xl overflow-hidden shadow-2xl shadow-black/40;
+  font-family: "Manrope", system-ui, sans-serif;
+}
+.ui-top {
+  @apply flex items-center justify-between px-4 h-10 border-b border-navy-600/60 bg-navy-800/60;
+}
+.ui-title {
+  @apply text-[11px] font-medium tracking-wide text-slate-300 uppercase;
+}
+.ui-dot {
+  @apply w-2 h-2 rounded-full inline-block;
+}
+.status-active {
+  @apply bg-teal-500;
+  box-shadow: 0 0 0 3px rgba(47, 122, 82, 0.25);
+}
+.status-settling {
+  @apply bg-gold-500;
+  animation: pulse-amber 1.1s ease-in-out infinite;
+}
+.status-settled {
+  @apply bg-teal-400;
+}
+.status-overdue {
+  @apply bg-warn;
+}
+@keyframes pulse-amber {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.ui-table th {
+  @apply text-left text-[10px] uppercase tracking-wider text-slate-400 font-medium px-3 py-2 border-b border-navy-600/40;
+}
+.ui-table td {
+  @apply text-[11.5px] text-slate-300 px-3 py-2 border-b border-navy-600/25;
+}
+.ui-table .num {
+  @apply text-slate-100;
+}
+.ui-kicker {
+  @apply text-[10px] uppercase tracking-wider text-slate-400;
+}
+.ui-bar {
+  @apply h-1.5 rounded-full bg-navy-600 overflow-hidden;
+}
+.ui-bar > span {
+  display: block;
+  height: 100%;
+}
+
+/* ---------- Calculator ---------- */
+.field {
+  @apply w-full bg-white border border-slate-200 rounded px-3.5 py-2.5 text-[15px] text-ink placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/60 focus:border-teal-500;
+}
+.field-label {
+  @apply block text-[13px] font-medium text-slate-700 mb-1.5;
+}
+.select-field {
+  @apply field appearance-none bg-no-repeat pr-9;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234b5563' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-md font-semibold transition-all duration-150 text-[15px] px-6 py-3.5;
+}
+.btn-primary {
+  @apply bg-amber-500 text-white hover:bg-amber-600;
+  box-shadow: 0 8px 24px -8px rgba(28, 69, 50, 0.45);
+}
+.btn-ghost {
+  @apply text-white border border-white/20 hover:border-white/45 hover:bg-white/5;
+}
+.btn-teal {
+  @apply bg-teal-600 text-white hover:bg-teal-500;
+  box-shadow: 0 8px 24px -10px rgba(35, 94, 63, 0.5);
+}
+
+/* ---------- FAQ ---------- */
+.faq-item {
+  @apply border-b border-slate-200;
+}
+.faq-q {
+  @apply w-full text-left py-5 flex items-center justify-between gap-4 text-[16px] font-semibold text-ink hover:text-teal-700 transition-colors;
+}
+.faq-a {
+  @apply pb-6 text-[15px] leading-relaxed text-slate-600 max-w-2xl;
+}
+
+/* ---------- Card ---------- */
+.card {
+  @apply bg-white border border-slate-200 rounded-xl p-7;
+}
+.card-dark {
+  @apply bg-navy-900 border border-navy-700 rounded-xl p-7;
+}
+
+/* ---------- Scroll reveal (respects reduced motion) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Payout demo animations ---------- */
+@keyframes settle-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.anim-settle { animation: settle-in 0.45s ease both; }
+@keyframes bar-fill {
+  from { width: 0; }
+}
+.anim-bar { animation: bar-fill 0.9s ease both; }
