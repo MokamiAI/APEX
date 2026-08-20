@@ -8,32 +8,31 @@ import { SITE_URL } from "@/lib/data";
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "APEX Enterprise — The Unified Financial Operating System for Capital Intermediaries",
+    default: "APEX Enterprise — Cloud-Hosted CRM & Loan Management System",
     template: "%s — APEX Enterprise",
   },
   description:
-    "APEX Enterprise is the unified financial operating system for capital intermediaries — companies that source deals and fund them with investor capital. 23 modules across CRM, lending, investor & fund management, collections, reporting, automation and compliance. Investor payouts calculate themselves the moment a deal settles.",
+    "APEX Enterprise is a cloud-hosted CRM and Loan Management System that replaces fragmented, manual lending — spreadsheets, email, informal approvals, reactive collections — with one integrated platform across the full lending lifecycle. Credit decisions route themselves the moment an application is ready.",
   keywords: [
-    "capital intermediary platform",
     "loan management software South Africa",
-    "PO financing platform",
-    "investor payout calculation",
+    "lending CRM software",
+    "automated credit approval routing",
     "POPIA compliant lending software",
-    "fund partner software",
-    "investor payout platform South Africa",
+    "collections and arrears software",
+    "NCA compliant loan management",
   ],
   openGraph: {
-    title: "APEX Enterprise — Unified Financial Operating System",
+    title: "APEX Enterprise — Cloud-Hosted CRM & Loan Management System",
     description:
-      "The unified financial operating system for capital intermediaries. 23 modules, one platform — and the moment a deal settles, every investor's return calculates itself.",
+      "One platform for the entire lending lifecycle. Credit decisions route themselves the moment an application is ready.",
     type: "website",
     locale: "en_ZA",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "APEX Enterprise — Unified Financial Operating System" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "APEX Enterprise — Cloud-Hosted CRM & Loan Management System" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "APEX Enterprise — Unified Financial Operating System",
-    description: "The unified financial operating system for capital intermediaries.",
+    title: "APEX Enterprise — Cloud-Hosted CRM & Loan Management System",
+    description: "One platform for the entire lending lifecycle.",
     images: ["/og.png"],
   },
   icons: {
@@ -57,7 +56,7 @@ const appSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description:
-    "The unified financial operating system for capital intermediaries — PO financiers, invoice financiers and bridging lenders who syndicate investor capital.",
+    "A cloud-hosted CRM and Loan Management System covering the full lending lifecycle — lead qualification, origination, approvals, loan administration, collections and reporting — for lenders replacing spreadsheets and email with one platform.",
   offers: { "@type": "Offer", price: "0", priceCurrency: "ZAR" },
 };
 

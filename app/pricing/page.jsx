@@ -9,7 +9,7 @@ export const metadata = { title: "Pricing" };
 const PRICING_FAQ = [
   {
     q: "Is pricing per seat?",
-    a: "Your quote is based on your book — deal volume, seats and investor funds — not a flat per-seat menu. Use the guide below to see your range in three clicks; we confirm a fixed quote before you commit.",
+    a: "Your quote is based on your book — application volume, seats and branches — not a flat per-seat menu. Use the guide below to see your range in three clicks; we confirm a fixed quote before you commit.",
   },
   {
     q: "How long is the contract?",
@@ -21,7 +21,7 @@ const PRICING_FAQ = [
   },
   {
     q: "What does Enterprise include that Growth doesn't?",
-    a: "Custom investor arrangements and fund structures, a dedicated onboarding team, custom reports and integrations, SLA-backed support with a named engineer, and white-glove deployment.",
+    a: "Custom approval hierarchies and branch structures, a dedicated onboarding team, custom reports and integrations, SLA-backed support with a named engineer, and white-glove deployment.",
   },
 ];
 
@@ -36,7 +36,7 @@ export default function PricingPage() {
               Your quote is based on your book. Not ours.
             </h1>
             <p className="text-lead text-slate-300 mt-6 max-w-2xl">
-              Deal volume, seats, investor funds. Three inputs, an honest range, and a conversation only
+              Application volume, seats, branches. Three inputs, an honest range, and a conversation only
               when you&apos;re ready. No published price list — every book is different.
             </p>
           </Reveal>
@@ -81,7 +81,7 @@ export default function PricingPage() {
                   </ul>
                   <div className="mt-8">
                     <Link href="/calculator" className={`btn w-full ${t.highlight ? "btn-primary" : "btn-teal"}`}>
-                      {t.highlight ? "Start with a live split" : "Check your range"}
+                      {t.highlight ? "Start with a live decision" : "Check your range"}
                     </Link>
                   </div>
                 </div>

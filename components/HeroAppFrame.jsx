@@ -3,8 +3,8 @@
 import { TOUR_MODULES } from "@/lib/data";
 import { SAMPLE_DASHBOARD_KPIS, SAMPLE_PORTFOLIO_BARS } from "@/lib/sampleLedger";
 
-// A compact frame of the REAL APEX Enterprise interface (the Unified Financial
-// Operating System) for the hero: module sidebar + executive dashboard.
+// A compact frame of the REAL APEX Enterprise interface (the Cloud-Hosted CRM &
+// Loan Management System) for the hero: module sidebar + executive dashboard.
 // Mirrors the live product — this is what a user sees after signing in.
 
 const KPIS = SAMPLE_DASHBOARD_KPIS;
@@ -21,7 +21,7 @@ export default function HeroAppFrame() {
             <rect x="1" y="1" width="30" height="30" rx="7" stroke="#2f7a52" strokeWidth="3" />
             <path d="M10 22V10h5.2c4 0 6.8 2.4 6.8 6s-2.8 6-6.8 6H10Z" fill="#2f7a52" />
           </svg>
-          <span className="ui-title">APEX Enterprise — Unified Financial Operating System</span>
+          <span className="ui-title">APEX Enterprise — CRM &amp; Loan Management System</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="ui-kicker hidden sm:block">Sarah Dlamini · admin</span>
@@ -30,9 +30,9 @@ export default function HeroAppFrame() {
       </div>
 
       <div className="flex">
-        {/* Sidebar — the 23-module platform */}
+        {/* Sidebar — the full platform */}
         <aside className="hidden md:block w-44 shrink-0 bg-navy-900/80 border-r border-navy-600/40 py-3">
-          <p className="ui-kicker px-3 mb-2">Modules · 23</p>
+          <p className="ui-kicker px-3 mb-2">Modules · 22</p>
           <nav className="space-y-0.5 max-h-[360px] overflow-y-auto pr-1" aria-label="APEX modules">
             {SIDEBAR.map((m, i) => (
               <div
@@ -83,7 +83,7 @@ export default function HeroAppFrame() {
 
             <div className="mt-3 flex gap-2 flex-wrap">
               <span className="text-[9px] font-semibold rounded bg-gold-500/15 text-gold-500 px-2 py-1">2 committee reviews pending</span>
-              <span className="text-[9px] font-semibold rounded bg-teal-500/15 text-teal-400 px-2 py-1">WF-107 · 4 payouts notified</span>
+              <span className="text-[9px] font-semibold rounded bg-teal-500/15 text-teal-400 px-2 py-1">WF-107 · nightly arrears sweep</span>
               <span className="text-[9px] font-semibold rounded bg-navy-600/60 text-slate-400 px-2 py-1">PAR 1-30 · 14 accounts</span>
             </div>
           </div>

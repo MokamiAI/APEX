@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Calculator from "@/components/Calculator";
 
-export const metadata = { title: "Investor payout calculator" };
+export const metadata = { title: "Arrears & approval impact calculator" };
 
 export default function CalculatorPage() {
   return (
@@ -10,13 +10,13 @@ export default function CalculatorPage() {
         <div className="max-w-content mx-auto px-5 lg:px-8 pt-20 pb-16 lg:pt-24">
           <p className="eyebrow mb-4">One module of APEX Enterprise · free tool · no signup</p>
           <h1 className="font-display font-semibold text-section text-white max-w-3xl">
-            The settlement engine, on your own numbers.
+            The decision engine, on your own numbers.
           </h1>
           <p className="text-lead text-slate-300 mt-6 max-w-2xl">
-            This is one capability inside the APEX Enterprise operating system: enter a deal from
-            your book, and APEX applies every investor&apos;s model — 50/50 splits, fixed returns,
-            penalty and reward rates — and shows the payout schedule and your retained margin.
-            Exactly what the platform does at every settlement after go-live.
+            This is one capability inside the APEX Enterprise platform: enter your application volume
+            and overdue book, and APEX shows what automated approval routing and the nightly arrears
+            sweep are worth — hours saved, cost saved, exposure addressed sooner.
+            Exactly what the platform does every day after go-live.
           </p>
         </div>
       </section>
@@ -33,8 +33,8 @@ export default function CalculatorPage() {
             Your numbers stay in your browser. The platform does this for your whole book.
           </h2>
           <p className="text-slate-600 mt-4 max-w-xl mx-auto text-[15.5px] leading-relaxed">
-            Every deal, every fund partner, every settlement — calculated automatically, notified via
-            WhatsApp, visible in each investor&apos;s ledger.
+            Every application, every night, every overdue account — routed and flagged automatically,
+            notified via WhatsApp, visible in the audit trail.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3.5">
             <Link href="/how-it-works" className="btn btn-teal">See how a deal flows through APEX</Link>

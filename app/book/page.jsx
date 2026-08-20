@@ -5,7 +5,7 @@ import BookingForm from "@/components/BookingForm";
 export const metadata = {
   title: "Book a walkthrough — APEX Enterprise",
   description:
-    "Book a 20-minute walkthrough of APEX Enterprise. We'll show your own investor splits calculated live — and rebuild your Monday report on your book.",
+    "Book a 20-minute walkthrough of APEX Enterprise. We'll show your own application routed and scored live — and rebuild your Monday report on your book.",
 };
 
 export default function BookPage() {
@@ -19,7 +19,7 @@ export default function BookPage() {
               Twenty minutes. Your numbers. Live.
             </h1>
             <p className="text-lead text-slate-300 mt-6 max-w-2xl">
-              Bring a settled deal from your book — we&apos;ll show its payout schedule calculated by
+              Bring an application from your book — we&apos;ll show it scored and routed by
               APEX in real time, and rebuild your Monday report in front of you. No slideware, no
               generic demo.
             </p>
@@ -38,7 +38,7 @@ export default function BookPage() {
                 <p className="eyebrow mb-3">What you&apos;ll see</p>
                 <ul className="space-y-3">
                   {[
-                    ["Your payout schedule, generated live", "Enter a deal from your book — every investor's model applied, your margin shown."],
+                    ["Your routing decision, generated live", "Enter an application from your book — scored against your risk matrix, routed instantly."],
                     ["Your Monday report, rebuilt", "Portfolio health, aging schedule, collector performance — assembled automatically."],
                     ["Your compliance trail, proven", "Field-level logging, committee workflow, the 7-year audit trail — live."],
                     ["Your migration path", "Your workbook mapped to APEX fields — see it before you commit."],
@@ -56,8 +56,8 @@ export default function BookPage() {
               <div className="rounded-2xl bg-navy-950 p-6 border border-navy-700">
                 <p className="ui-kicker !text-slate-500 mb-3">Before the call</p>
                 <p className="text-[14px] text-slate-300 leading-relaxed">
-                  Send one settled deal from your book — one row, that&apos;s all. We&apos;ll have its payout
-                  schedule ready when you join. No prep beyond that.
+                  Send one application from your book — one row, that&apos;s all. We&apos;ll have its routing
+                  decision ready when you join. No prep beyond that.
                 </p>
               </div>
               <p className="text-[13px] text-slate-500 leading-relaxed">
