@@ -5,7 +5,7 @@ import { LEARN, LEARN_CATEGORIES } from "@/lib/learn";
 export const metadata = {
   title: "Guides & resources — APEX Enterprise",
   description:
-    "Practical guides for lenders: automated approval routing, PAR buckets and collections, POPIA and NCA compliance, choosing lending software and more.",
+    "Practical guides for capital intermediaries: investor payout calculation, co-funder splits, PAR buckets, POPIA and NCA compliance, PO finance software and more.",
 };
 
 export default function ResourcesPage() {
@@ -16,11 +16,11 @@ export default function ResourcesPage() {
           <Reveal>
             <p className="eyebrow mb-4">Guides & resources</p>
             <h1 className="font-display font-semibold text-section text-white max-w-3xl">
-              The questions lenders actually ask.
+              The questions capital intermediaries actually ask.
             </h1>
             <p className="text-lead text-slate-300 mt-6 max-w-2xl">
-              Written for operators, risk officers and accountants — specific, honest, and always
-              ending in a tool that proves the point on your own numbers.
+              Written for operators, risk officers, fund partners and accountants — specific, honest,
+              and always ending in a tool that proves the point on your own numbers.
             </p>
           </Reveal>
         </div>
@@ -61,7 +61,7 @@ export default function ResourcesPage() {
               Skip the reading. Run the numbers.
             </h2>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3.5">
-              <Link href="/calculator" className="btn btn-primary">See your impact live</Link>
+              <Link href="/calculator" className="btn btn-primary">Calculate your splits live</Link>
               <Link href="/compliance-audit" className="btn btn-teal">Run the readiness check</Link>
             </div>
           </Reveal>

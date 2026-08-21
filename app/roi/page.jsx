@@ -3,9 +3,9 @@ import Reveal from "@/components/Reveal";
 import RoiCalculator from "@/components/RoiCalculator";
 
 export const metadata = {
-  title: "ROI calculator — what manual approvals are costing you",
+  title: "ROI calculator — what manual settlements are costing you",
   description:
-    "Estimate what manual approvals and audit-evidence assembly cost your lending business each year — hours, cost of time, and compliance exposure — then see APEX remove it at the source.",
+    "Estimate what manual investor payout calculations cost your syndication business each year — hours, cost of time, and dispute exposure — then see APEX remove it at settlement.",
 };
 
 export default function RoiPage() {
@@ -16,11 +16,11 @@ export default function RoiPage() {
           <Reveal>
             <p className="eyebrow mb-4">The cost of the status quo</p>
             <h1 className="font-display font-semibold text-section text-white max-w-3xl">
-              What are manual approvals really costing you?
+              What are manual settlements really costing you?
             </h1>
             <p className="text-lead text-slate-300 mt-6 max-w-2xl">
-              Every application routed by hand is hours of your team&apos;s time — and every
-              reconstructed audit trail carries a compliance risk you can&apos;t see coming. Put your numbers in.
+              Every settlement recalculated by hand is hours of your team&apos;s time — and every
+              recalculated split carries a dispute risk you can&apos;t see coming. Put your numbers in.
             </p>
           </Reveal>
         </div>
@@ -39,20 +39,20 @@ export default function RoiPage() {
           <Reveal>
             <div className="card h-full">
               <p className="eyebrow mb-2">The fix</p>
-              <h2 className="text-[17px] font-semibold text-ink mb-2">Automated at submission</h2>
+              <h2 className="text-[17px] font-semibold text-ink mb-2">Automated at settlement</h2>
               <p className="text-[14px] text-slate-600 leading-relaxed">
-                APEX scores and routes every application the moment it&apos;s submitted — approved
-                directly, or forwarded to committee. No forwarding an email and hoping.
+                APEX applies every investor&apos;s model the moment a deal settles — 50/50 splits, fixed
+                returns, penalty and reward rates — and publishes the schedule. No formula in a head.
               </p>
             </div>
           </Reveal>
           <Reveal delay={80}>
             <div className="card h-full">
               <p className="eyebrow mb-2">The control</p>
-              <h2 className="text-[17px] font-semibold text-ink mb-2">Compliance risk engineered out</h2>
+              <h2 className="text-[17px] font-semibold text-ink mb-2">Dispute risk engineered out</h2>
               <p className="text-[14px] text-slate-600 leading-relaxed">
-                Every decision is logged to the System Audit Trail as it happens, with WF-107
-                sweeping the book nightly. Reconstructing evidence on demand stops being a thing.
+                The same schedule is visible to every fund partner in their ledger, with WF-107
+                notifications. A dispute over a calculated amount stops being a thing.
               </p>
             </div>
           </Reveal>
@@ -61,7 +61,7 @@ export default function RoiPage() {
               <p className="eyebrow mb-2">The proof</p>
               <h2 className="text-[17px] font-semibold text-ink mb-2">Try it on your own book</h2>
               <p className="text-[14px] text-slate-600 leading-relaxed">
-                Run the impact calculator on your own numbers — or import your workbook and
+                Run the payout calculator on a deal from your book — or import your workbook and
                 watch it map to APEX in under a minute.
               </p>
               <div className="mt-4 flex flex-wrap gap-2.5">

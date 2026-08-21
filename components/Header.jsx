@@ -17,7 +17,7 @@ export default function Header() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/ApexLogo.png" alt="APEX" className="h-6 w-auto brightness-0 invert shrink-0" />
           <span className="hidden sm:block text-[11px] uppercase tracking-[0.14em] text-slate-400 border-l border-white/15 pl-3">
-            CRM &amp; Loan Management System
+            Unified Financial Operating System
           </span>
           <span
             className="num text-[10px] font-medium text-teal-400 border border-teal-500/40 rounded px-1.5 py-0.5 ml-1"

@@ -5,7 +5,7 @@ import ImportDemo from "@/components/ImportDemo";
 export const metadata = {
   title: "Import demo — your data, mapped",
   description:
-    "See how APEX imports your .xlsx or .csv customer data and maps it to the platform — applications, loan records and client records. Runs in your browser, nothing uploaded.",
+    "See how APEX imports your .xlsx or .csv customer data and maps it to the platform — deals, investor ledgers and client records. Runs in your browser, nothing uploaded.",
 };
 
 export default function ImportPage() {
@@ -42,7 +42,7 @@ export default function ImportPage() {
               <p className="num text-teal-600 text-lg mb-3">01</p>
               <h2 className="text-[16px] font-semibold text-ink mb-2">Import, don&apos;t retype</h2>
               <p className="text-[14px] text-slate-600 leading-relaxed">
-                .xlsx and .csv customer data imports directly — applications, loan records and client
+                .xlsx and .csv customer data imports directly — deals, investor ledgers and client
                 records. You don&apos;t start from zero.
               </p>
             </div>

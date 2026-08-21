@@ -3,7 +3,7 @@
 // Replace with real APEX screenshots when available (per the brief's Section 9 rule).
 
 import { fmtR as fmt } from "@/lib/format";
-import { SAMPLE_APPROVALS } from "@/lib/sampleLedger";
+import { SAMPLE_INVESTORS, investorModelLabel } from "@/lib/sampleLedger";
 
 function Panel({ title, sub, children, footer }) {
   return (
@@ -21,23 +21,26 @@ function Panel({ title, sub, children, footer }) {
   );
 }
 
-function ApprovalsPanel() {
+function LedgerPanel() {
+  const rows = SAMPLE_INVESTORS.map((inv) => [
+    inv.name, investorModelLabel(inv, { short: true }), inv.contribution, inv.payout, inv.status,
+  ]);
   return (
     <Panel
-      title="Approvals Queue — automatic routing"
-      sub="Scored the moment each application is submitted"
-      footer="Every application routes itself. Nobody forwards an email hoping someone picks it up."
+      title="Investor Ledger — fund partner view"
+      sub="Last settlement · PO-1029"
+      footer={'Every fund partner sees their own live view. No calls asking "where is my money?"'}
     >
       <table className="ui-table w-full">
-        <thead><tr><th>App</th><th>Client</th><th className="text-right">Amount</th><th className="text-right">Risk</th><th>Route</th></tr></thead>
+        <thead><tr><th>Fund</th><th>Model</th><th className="text-right">Contrib.</th><th className="text-right">Payout</th><th>Status</th></tr></thead>
         <tbody>
-          {SAMPLE_APPROVALS.map((a) => (
-            <tr key={a.id}>
-              <td className="num text-slate-200">{a.id}</td>
-              <td className="text-slate-300">{a.client}</td>
-              <td className="text-right num">{fmt(a.amount)}</td>
-              <td className="text-right num text-teal-400">{a.riskScore}</td>
-              <td><span className={`text-[10px] ${a.route === "Auto-approved" ? "text-teal-400" : "text-gold-500"}`}>{a.route}</span></td>
+          {rows.map((r) => (
+            <tr key={r[0]}>
+              <td className="text-slate-200 font-medium">{r[0]}</td>
+              <td className="text-slate-400">{r[1]}</td>
+              <td className="text-right num">{fmt(r[2])}</td>
+              <td className="text-right num text-teal-400">{fmt(r[3])}</td>
+              <td><span className={`text-[10px] ${r[4] === "Paid" ? "text-teal-400" : "text-slate-400"}`}>{r[4]}</span></td>
             </tr>
           ))}
         </tbody>
@@ -176,7 +179,7 @@ function ReportingPanel() {
 }
 
 export default function OutcomePanel({ type }) {
-  if (type === "approvals") return <ApprovalsPanel />;
+  if (type === "investor-ledger") return <LedgerPanel />;
   if (type === "collections") return <CollectionsPanel />;
   if (type === "origination") return <OriginationPanel />;
   return <ReportingPanel />;

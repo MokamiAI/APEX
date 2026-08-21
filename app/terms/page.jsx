@@ -12,7 +12,7 @@ const SECTIONS = [
   },
   {
     h: "2. The tools on this site",
-    body: "The arrears & approval impact calculator, compliance readiness check and import demo are provided free for evaluation. Calculations are illustrative and are not financial, legal or investment advice. Always verify results against your professional advisors before acting.",
+    body: "The investor payout calculator, compliance readiness check and import demo are provided free for evaluation. Calculations are illustrative and are not financial, legal or investment advice. Always verify results against your professional advisors before acting.",
   },
   {
     h: "3. No client relationship",

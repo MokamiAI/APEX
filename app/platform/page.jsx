@@ -2,7 +2,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import { PILLARS, ROLES, WORKFLOW_RULES, INTEGRATIONS, REPORTS, RISK_MATRIX } from "@/lib/data";
 
-export const metadata = { title: "Platform — the 24 modules" };
+export const metadata = { title: "Platform — the 23 modules" };
 
 export default function PlatformPage() {
   return (
@@ -12,10 +12,10 @@ export default function PlatformPage() {
           <Reveal>
             <p className="eyebrow mb-4">The platform</p>
             <h1 className="font-display font-semibold text-section text-white max-w-3xl">
-              Every stage of the lending lifecycle. One cloud-hosted CRM &amp; Loan Management System.
+              Every step of the deal lifecycle. One unified financial operating system.
             </h1>
             <p className="text-lead text-slate-300 mt-6 max-w-2xl">
-              Twenty-four modules across eight stages — from lead to loan closed.
+              Twenty-three modules across nine functional pillars — from lead to investor paid out.
               Each module is described the way it changes your week, not the way it looks in a brochure.
             </p>
           </Reveal>
@@ -60,7 +60,7 @@ export default function PlatformPage() {
             </h2>
             <p className="text-slate-600 mt-4 max-w-2xl text-[15.5px] leading-relaxed">
               No-code rules trigger emails, SMS alerts and webhooks across the lifecycle — including
-              WF-107, which sweeps the book every night and queues reminders on every overdue account.
+              WF-107, which notifies fund partners the moment a settlement payout is calculated.
             </p>
           </Reveal>
           <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -220,10 +220,10 @@ export default function PlatformPage() {
         <div className="max-w-content mx-auto px-5 lg:px-8 text-center">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(1.8rem,3.4vw,2.9rem)] text-white max-w-2xl mx-auto">
-              See the platform route a decision from your own numbers.
+              See the platform compute a settlement from your own numbers.
             </h2>
             <div className="mt-8">
-              <Link href="/calculator" className="btn btn-primary">See your impact live</Link>
+              <Link href="/calculator" className="btn btn-primary">Calculate your splits live</Link>
             </div>
           </Reveal>
         </div>

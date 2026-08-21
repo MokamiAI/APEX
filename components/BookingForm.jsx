@@ -7,15 +7,15 @@ import { track, EVENTS } from "@/lib/analytics";
 const STEPS = ["Your business", "Your book", "Your slot", "Your details"];
 
 const FUND_TYPES = [
-  "Term lending",
-  "Working capital / short-term finance",
-  "Asset-backed lending",
+  "PO financing",
+  "Invoice financing",
+  "Bridging finance",
   "Multiple / mixed",
 ];
 
 const DEPLOYMENT = ["R 500k – R 1m", "R 1m – R 3m", "R 3m – R 10m", "R 10m+"];
-const VOLUME = ["Under 20 applications / month", "20–80 applications / month", "80–200 applications / month", "200+ applications / month"];
-const PARTNERS = ["1 branch", "2–4 branches", "5+ branches"];
+const VOLUME = ["Under 20 deals / month", "20–80 deals / month", "80–200 deals / month", "200+ deals / month"];
+const PARTNERS = ["1–5 fund partners", "5–12 fund partners", "12+ fund partners"];
 
 // Generate bookable slots: next 5 business days, 09:00–16:00 SAST, hourly.
 function buildSlots() {
@@ -69,8 +69,8 @@ export default function BookingForm({ purpose = "walkthrough" }) {
     if (step === 0 && form.fundTypes.length === 0) e.fundTypes = "Select at least one funding type.";
     if (step === 1) {
       if (!form.deployment) e.deployment = "Select your monthly deployment.";
-      if (!form.volume) e.volume = "Select your application volume.";
-      if (!form.partners) e.partners = "Select your branch count.";
+      if (!form.volume) e.volume = "Select your deal volume.";
+      if (!form.partners) e.partners = "Select your fund partner count.";
     }
     if (step === 2 && !form.slot) e.slot = "Pick a time — or choose “No preference”.";
     if (step === 3) {
@@ -91,7 +91,7 @@ export default function BookingForm({ purpose = "walkthrough" }) {
   const submit = async (ev) => {
     ev.preventDefault();
     if (!validStep()) return;
-    const type = "walkthrough";
+    const type = purpose === "fund" ? "fund-onboarding" : "walkthrough";
     const res = await captureLead({
       type,
       payload: {
@@ -108,7 +108,7 @@ export default function BookingForm({ purpose = "walkthrough" }) {
       },
     });
     if (res.ok) {
-      track(EVENTS.walkthroughRequest, {
+      track(EVENTS[type === "fund" ? "fundOnboardingRequest" : "walkthroughRequest"], {
         fundTypes: form.fundTypes.join(","), deployment: form.deployment, channel: form.whatsapp ? "whatsapp" : "email",
       });
       track(EVENTS.leadSent, { type, nurture: res.nurture || "walkthrough-request" });
@@ -132,10 +132,12 @@ export default function BookingForm({ purpose = "walkthrough" }) {
             </svg>
           </div>
           <h2 className="font-display font-semibold text-3xl text-white">
-            Your walkthrough request is in.
+            {purpose === "fund" ? "Your onboarding request is in." : "Your walkthrough request is in."}
           </h2>
           <p className="text-slate-300 mt-4 max-w-xl mx-auto text-[15.5px] leading-relaxed">
-            We&apos;ll confirm within one business day.
+            {purpose === "fund"
+              ? "We'll confirm within one business day with a live view on your own deals."
+              : "We'll confirm within one business day."}
             {slotLabel ? <> You asked for <span className="text-teal-400 font-semibold">{slotLabel}</span> — we&apos;ll hold it for you.</> : ""}
           </p>
           <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3.5">
@@ -154,7 +156,7 @@ export default function BookingForm({ purpose = "walkthrough" }) {
                 Continue on WhatsApp
               </a>
             )}
-            <a href="/calculator" className="btn btn-ghost">Run the impact calculator meanwhile</a>
+            <a href="/calculator" className="btn btn-ghost">Run the calculator meanwhile</a>
           </div>
         </div>
       </div>
@@ -185,7 +187,7 @@ export default function BookingForm({ purpose = "walkthrough" }) {
       <form onSubmit={submit} className="p-6 lg:p-8">
         {step === 0 && (
           <div className="anim-settle">
-            <h3 className="font-display font-semibold text-2xl text-ink mb-2">What do you lend?</h3>
+            <h3 className="font-display font-semibold text-2xl text-ink mb-2">What do you fund?</h3>
             <p className="text-[14px] text-slate-500 mb-6">Helps us bring the right people to the session.</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {FUND_TYPES.map((t) => {
@@ -218,8 +220,8 @@ export default function BookingForm({ purpose = "walkthrough" }) {
             </div>
             {[
               ["deployment", "Monthly deployment", DEPLOYMENT, "R 500k – R 10m+"],
-              ["volume", "Active applications per month", VOLUME, "20–200+"],
-              ["partners", "Branches / entities", PARTNERS, "1–5+"],
+              ["volume", "Active deals per month", VOLUME, "20–200+"],
+              ["partners", "Investor fund partners", PARTNERS, "1–12+"],
             ].map(([key, label, options, hint]) => (
               <div key={key}>
                 <p className="field-label">{label}</p>
@@ -339,7 +341,7 @@ export default function BookingForm({ purpose = "walkthrough" }) {
             <button type="button" onClick={next} className="btn btn-primary">Continue</button>
           ) : (
             <button type="submit" className="btn btn-primary">
-              Book my walkthrough
+              {purpose === "fund" ? "Request fund onboarding" : "Book my walkthrough"}
             </button>
           )}
         </div>

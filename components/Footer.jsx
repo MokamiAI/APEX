@@ -12,8 +12,9 @@ export default function Footer() {
               <img src="/ApexLogo.png" alt={COMPANY.name} className="h-6 w-auto brightness-0 invert" />
             </div>
             <p className="text-[14px] leading-relaxed text-slate-400 max-w-sm">
-              The {COMPANY.category.toLowerCase()} — a cloud-hosted CRM and Loan Management System
-              covering the full lending lifecycle. 24 modules across 8 stages.
+              The {COMPANY.category.toLowerCase()} — a unified financial operating system
+              built for PO financiers, invoice financiers and bridging lenders who syndicate
+              investor capital. 23 modules across 9 functional pillars.
             </p>
             <p className="num text-[12px] text-slate-500 mt-4">
               Built & maintained by {COMPANY.maker} · {COMPANY.country}
@@ -32,6 +33,11 @@ export default function Footer() {
               <li>
                 <Link href="/tour" className="text-[14px] text-slate-400 hover:text-teal-400 transition-colors">
                   Product tour
+                </Link>
+              </li>
+              <li>
+                <Link href="/for-fund-partners" className="text-[14px] text-slate-400 hover:text-teal-400 transition-colors">
+                  For fund partners
                 </Link>
               </li>
               <li>
@@ -71,7 +77,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/calculator" className="text-[14px] text-slate-400 hover:text-teal-400 transition-colors">
-                  Arrears &amp; approval impact calculator
+                  Investor payout calculator
                 </Link>
               </li>
             </ul>
@@ -89,7 +95,7 @@ export default function Footer() {
                   {COMPANY.support}
                 </a>
               </li>
-              <li className="text-slate-500">Lending operations software, South Africa</li>
+              <li className="text-slate-500">PO / invoice / bridging finance, South Africa</li>
             </ul>
           </div>
         </div>

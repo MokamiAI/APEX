@@ -49,7 +49,7 @@ export default function HowItWorksPage() {
               Every step a deal takes — without you doing it manually.
             </h1>
             <p className="text-lead text-slate-300 mt-6 max-w-2xl">
-              Who does what, at every step. Eight steps from application received to loan closed,
+              Who does what, at every step. Eleven steps from application received to investor paid out,
               and eight from first missed payment to recovered or restructured.
             </p>
           </Reveal>
@@ -59,7 +59,7 @@ export default function HowItWorksPage() {
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-content mx-auto px-5 lg:px-8">
           <Reveal>
-            <FlowList title="The deal workflow" items={DEAL_FLOW} autoCount={6} />
+            <FlowList title="The deal workflow" items={DEAL_FLOW} autoCount={4} />
           </Reveal>
         </div>
       </section>
@@ -76,12 +76,12 @@ export default function HowItWorksPage() {
         <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(1.7rem,3vw,2.6rem)] text-ink leading-tight">
-              The decision moment is where APEX earns its keep.
+              The settlement moment is where APEX earns its keep.
             </h2>
             <p className="text-[16px] leading-relaxed text-slate-600 mt-5">
-              When an application is submitted, it&apos;s scored against your risk matrix automatically —
-              credit, financials, industry, collateral — and routed: approved directly, or forwarded to
-              committee the instant your threshold is hit. No forwarding. No waiting on whoever's free.
+              When a deal settles, every investor&apos;s return is calculated automatically — 50/50 split or fixed
+              return, penalty and reward rates applied, your retained margin shown. No formula in a head.
+              No hope. Just the schedule, published and notified.
             </p>
             <Link href="/calculator" className="btn btn-teal mt-7">Try it on your numbers</Link>
           </Reveal>
@@ -90,10 +90,10 @@ export default function HowItWorksPage() {
               <p className="ui-kicker !text-slate-500 mb-4">The 20-minute walkthrough, compressed</p>
               <ol className="space-y-4">
                 {[
-                  ["1", "You enter an application from your own book", "amount, term, client"],
-                  ["2", "APEX scores it against your risk matrix", "credit, financials, industry, collateral"],
-                  ["3", "The routing decision appears", "auto-approved, or forwarded to committee"],
-                  ["4", "You decide", "this is what every application looks like after go-live"],
+                  ["1", "You enter a deal from your own book", "amount, term, investors"],
+                  ["2", "APEX applies every model", "50/50 splits, fixed returns, penalties, rewards"],
+                  ["3", "The payout schedule appears", "every investor's return, your retained margin"],
+                  ["4", "You decide", "this is what every settlement looks like after go-live"],
                 ].map(([n, t, d]) => (
                   <li key={n} className="flex gap-4">
                     <span className="num text-teal-400 w-5 shrink-0">{n}</span>

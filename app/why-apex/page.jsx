@@ -4,19 +4,19 @@ import Reveal from "@/components/Reveal";
 export const metadata = {
   title: "Why APEX Enterprise",
   description:
-    "Why lenders choose APEX Enterprise: the decision engine, the compliance controls, the 60-day migration and the 90-day warranty.",
+    "Why capital intermediaries choose APEX Enterprise: the settlement engine, the compliance controls, the 60-day migration and the 90-day warranty.",
 };
 
 const ARGUMENTS = [
   {
     n: "01",
-    h: "Built for the whole lifecycle, not a patchwork",
-    b: "Most lending software covers one stage and leaves you gluing a CRM to a loan tracker to a spreadsheet. APEX covers all eight — lead qualification through collections — in one system, with the difference showing in every workflow.",
+    h: "Built for the model, not for the lender",
+    b: "Loan software was built for the company that funds its own book. APEX was built for the company that sources the deal and funds it with investor capital — the difference shows in every workflow, from co-funder splits to the investor ledger.",
   },
   {
     n: "02",
-    h: "The decision engine",
-    b: "The moment an application is submitted, it's scored automatically against your risk matrix and routed — approved directly, or forwarded to committee the instant your threshold is hit. This is the calculation most platforms in this market still make a person do.",
+    h: "The settlement engine",
+    b: "The moment a deal settles, every investor's return is calculated automatically — 50/50 splits or fixed returns, penalty and reward rates applied, your retained margin shown. This is the calculation no other platform in this market performs.",
   },
   {
     n: "03",
@@ -31,12 +31,12 @@ const ARGUMENTS = [
   {
     n: "05",
     h: "A platform, not a patchwork",
-    b: "24 modules across 8 stages — CRM, origination, approvals, loan administration, collections, reporting, automation, system administration — in one system. No more gluing a CRM to a loan tracker to a spreadsheet.",
+    b: "23 modules across 9 pillars — CRM, lending, investor & fund management, collections, messaging, reporting, automation, compliance, security — in one system. No more gluing a CRM to a loan tracker to a spreadsheet.",
   },
   {
     n: "06",
-    h: "Built for the whole business",
-    b: "Origination runs the book, accountants audit with a trail that already exists, IT and admin keep it secure and configured. One source of truth, every stakeholder sees what they need.",
+    h: "Built for the whole syndication",
+    b: "Operators run the book, fund partners see their deals live, accountants audit with a trail that already exists. One source of truth, three views — the platform serves all three sides of the deal.",
   },
 ];
 
@@ -81,7 +81,7 @@ export default function WhyApexPage() {
             </h2>
             <p className="text-slate-300 mt-5 text-[16px] leading-relaxed">
               The buying decision isn&apos;t really between vendors — it&apos;s between four ways of running
-              a lending book. We&apos;ve written the comparison honestly, including where APEX is the
+              a syndication book. We&apos;ve written the comparison honestly, including where APEX is the
               wrong answer.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
@@ -97,7 +97,7 @@ export default function WhyApexPage() {
                 ["UAT critical issues", "0", "teal"],
                 ["Days to go-live", "60", "teal"],
                 ["Defects liability", "90 days", "teal"],
-                ["Modules", "24", "teal"],
+                ["Modules", "23", "teal"],
                 ["Roles", "6", "teal"],
                 ["Enterprise tenants live", "1", "amber"],
               ].map(([k, v, tone]) => (
@@ -119,7 +119,7 @@ export default function WhyApexPage() {
             </h2>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3.5">
               <Link href="/book" className="btn btn-primary">Book a 20-minute walkthrough</Link>
-              <Link href="/calculator" className="btn btn-teal">See your impact live</Link>
+              <Link href="/calculator" className="btn btn-teal">Calculate your splits live</Link>
             </div>
           </Reveal>
         </div>

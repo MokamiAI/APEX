@@ -15,7 +15,7 @@ export default function ComplianceAuditPage() {
               The 12-point POPIA &amp; NCA readiness check.
             </h1>
             <p className="text-lead text-slate-300 mt-6 max-w-2xl">
-              Twelve questions on the controls a regulated lender must have.
+              Twelve questions on the controls a regulated capital intermediary must have.
               A scored report names your specific gaps — and the APEX control that closes each one.
             </p>
           </Reveal>

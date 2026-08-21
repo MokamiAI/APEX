@@ -2,7 +2,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ProductTour from "@/components/ProductTour";
 
-export const metadata = { title: "Product tour — the 22 modules" };
+export const metadata = { title: "Product tour — the 23 modules" };
 
 export default function TourPage() {
   return (
@@ -12,12 +12,12 @@ export default function TourPage() {
           <Reveal>
             <p className="eyebrow mb-4">Product tour</p>
             <h1 className="font-display font-semibold text-section text-white max-w-3xl">
-              Click through the platform. Every one of the 22 modules.
+              Click through the platform. Every one of the 23 modules.
             </h1>
             <p className="text-lead text-slate-300 mt-6 max-w-2xl">
-              This is the real APEX Enterprise interface — the Cloud-Hosted CRM &amp; Loan Management
-              System. Browse the modules below; the decision engine, the risk matrix, the committee
-              workflow, the PAR buckets and the audit trail are all in here.
+              This is the real APEX Enterprise interface — the Unified Financial Operating System.
+              Browse the modules below; the settlement engine, the risk matrix, the committee
+              workflow, the PAR buckets and the investor ledger are all in here.
             </p>
           </Reveal>
         </div>
@@ -39,10 +39,10 @@ export default function TourPage() {
           <Reveal>
             <div className="card h-full">
               <p className="eyebrow mb-3">The differentiator</p>
-              <h2 className="font-display font-semibold text-2xl text-ink mb-3">The decision moment</h2>
+              <h2 className="font-display font-semibold text-2xl text-ink mb-3">The settlement moment</h2>
               <p className="text-[15px] text-slate-600 leading-relaxed">
-                When an application is submitted, it&apos;s scored automatically —
-                risk matrix applied, and routed: approved directly, or forwarded to committee.
+                When a deal settles, every investor&apos;s return is calculated automatically —
+                each model applied, penalty and reward rates included, your retained margin shown.
               </p>
               <Link href="/calculator" className="btn btn-teal mt-6">Try it on your numbers</Link>
             </div>
@@ -60,13 +60,13 @@ export default function TourPage() {
           </Reveal>
           <Reveal delay={160}>
             <div className="card h-full">
-              <p className="eyebrow mb-3">The intelligence</p>
-              <h2 className="font-display font-semibold text-2xl text-ink mb-3">Reporting that runs itself</h2>
+              <p className="eyebrow mb-3">The channels</p>
+              <h2 className="font-display font-semibold text-2xl text-ink mb-3">Built for your investors</h2>
               <p className="text-[15px] text-slate-600 leading-relaxed">
-                The Reporting Studio assembles portfolio health, aging schedules and collector
-                performance automatically — in your inbox before you reach the office.
+                Fund partners get a live ledger, automatic payout schedules and WF-107 WhatsApp
+                notifications. Originators get transparent books.
               </p>
-              <Link href="/platform" className="btn btn-teal mt-6">See the full platform</Link>
+              <Link href="/for-fund-partners" className="btn btn-teal mt-6">See the fund partner view</Link>
             </div>
           </Reveal>
         </div>

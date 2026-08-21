@@ -52,12 +52,9 @@ function parseCsv(text) {
   })) };
 }
 
-// Illustrative scoring — the real risk engine weighs credit/financials/industry/collateral.
-function scoreApplication(amount, rate) {
-  const score = Math.max(40, Math.min(95, 90 - Math.round(amount / 100000) - Math.round(rate)));
-  const band = score >= 70 ? "Low Risk" : score >= 50 ? "Medium Risk" : "High Risk";
-  const route = amount >= 1000000 ? "Committee Review" : "Auto-approved";
-  return { score, band, route };
+function payout(amount, rate) {
+  const income = (amount * rate) / 100;
+  return { income, investor: income * 0.5, retained: income * 0.5 };
 }
 
 export default function ImportDemo() {
@@ -252,27 +249,28 @@ export default function ImportDemo() {
             </div>
 
             <div className="lg:col-span-2 space-y-3">
-              <p className="ui-kicker !text-slate-500">Decision on the first record</p>
+              <p className="ui-kicker !text-slate-500">Settlement on the first record</p>
               {(() => {
                 const first = data.rows[0];
-                const d = scoreApplication(first.amount, first.rate);
+                const p = payout(first.amount, first.rate);
                 return (
                   <div className="rounded-2xl border border-slate-200 p-5 space-y-3">
                     {[
-                      ["Application", fmt(first.amount)],
-                      ["Risk score", `${d.score}/100 · ${d.band}`],
-                      ["Routing", d.route],
+                      ["Deal", fmt(first.amount)],
+                      ["Interest income", fmt(p.income)],
+                      ["Investor payout (50/50)", fmt(p.investor)],
+                      ["Your retained margin", fmt(p.retained)],
                     ].map(([k, v]) => (
                       <div key={k} className="flex justify-between items-center text-[13.5px]">
                         <span className="text-slate-500">{k}</span>
-                        <span className={`num font-medium ${k === "Routing" ? "text-gold-600" : "text-ink"}`}>{v}</span>
+                        <span className={`num font-medium ${k.includes("margin") ? "text-gold-600" : "text-ink"}`}>{v}</span>
                       </div>
                     ))}
                     <div className="pt-2 border-t border-slate-200 flex items-center gap-2">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M4 12.5 9.5 18 20 6.5" stroke="#2f7a52" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                      <p className="text-[11.5px] text-teal-700">WF-104: committee notified automatically when routing requires it</p>
+                      <p className="text-[11.5px] text-teal-700">WF-107: fund partners notified at settlement</p>
                     </div>
                   </div>
                 );
@@ -281,7 +279,7 @@ export default function ImportDemo() {
           </div>
 
           <div className="flex flex-col sm:flex-row justify-center gap-3.5 pt-2">
-            <a href="/calculator" className="btn btn-primary">Continue — see your own impact</a>
+            <a href="/calculator" className="btn btn-primary">Continue — run your own splits</a>
             <button type="button" onClick={() => { setState("idle"); setData(null); setFileName(""); }} className="btn btn-ghost !text-ink !border-slate-300 hover:!bg-slate-100">
               Import another file
             </button>

@@ -9,7 +9,7 @@ export const metadata = {
 const SECTIONS = [
   {
     h: "1. Who we are",
-    body: "Intermediate Data Systems (Pty) Ltd is a South African company that builds and operates APEX Enterprise, a cloud-hosted CRM and Loan Management System for lenders. We act as a responsible party under the Protection of Personal Information Act 4 of 2013 (POPIA) when we process personal information about our own prospects, clients and website visitors.",
+    body: "Intermediate Data Systems (Pty) Ltd is a South African company that builds and operates APEX Enterprise, the unified financial operating system for capital intermediaries. We act as a responsible party under the Protection of Personal Information Act 4 of 2013 (POPIA) when we process personal information about our own prospects, clients and website visitors.",
   },
   {
     h: "2. What we collect on this website",

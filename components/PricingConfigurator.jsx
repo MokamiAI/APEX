@@ -2,17 +2,17 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { DEAL_BANDS, SEAT_BANDS, BRANCH_BANDS, recommendTier } from "@/lib/pricing";
+import { DEAL_BANDS, SEAT_BANDS, FUND_BANDS, recommendTier } from "@/lib/pricing";
 import { TIERS } from "@/lib/data";
 
 const FIELDS = [
-  { key: "deals", label: "Your applications per month", options: DEAL_BANDS },
+  { key: "deals", label: "Your deals per month", options: DEAL_BANDS },
   { key: "seats", label: "Your seats", options: SEAT_BANDS },
-  { key: "branches", label: "Your branches / entities", options: BRANCH_BANDS },
+  { key: "funds", label: "Your fund partners", options: FUND_BANDS },
 ];
 
 export default function PricingConfigurator() {
-  const [selection, setSelection] = useState({ deals: null, seats: null, branches: null });
+  const [selection, setSelection] = useState({ deals: null, seats: null, funds: null });
   const allSelected = Object.values(selection).every(Boolean);
   const tierName = allSelected ? recommendTier(selection) : null;
   const tier = tierName ? TIERS.find((t) => t.name === tierName) : null;
@@ -55,7 +55,7 @@ export default function PricingConfigurator() {
             {tier ? `${tier.name} — ${tier.tag}` : "—"}
           </p>
         </div>
-        <Link href="/calculator" className="btn btn-primary">See your impact to get a quote</Link>
+        <Link href="/calculator" className="btn btn-primary">See your splits to get a quote</Link>
       </div>
     </div>
   );

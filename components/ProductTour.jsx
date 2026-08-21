@@ -4,6 +4,7 @@ import { useState } from "react";
 import { TOUR_MODULES, PILLARS } from "@/lib/data";
 import { fmtR as fmt } from "@/lib/format";
 import {
+  SAMPLE_INVESTORS, investorModelLabel,
   SAMPLE_DASHBOARD_KPIS, SAMPLE_PORTFOLIO_BARS,
   SAMPLE_PAR_BUCKETS, SAMPLE_COLLECTIONS_ROWS,
 } from "@/lib/sampleLedger";
@@ -232,6 +233,39 @@ function CollectionsScreen() {
   );
 }
 
+function InvestorScreen() {
+  const rows = SAMPLE_INVESTORS.map((inv) => [
+    inv.name, investorModelLabel(inv, { short: true }), inv.contribution, inv.payout, inv.status,
+  ]);
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-2">
+        <p className="ui-title !text-slate-400">Investor Ledger — automatic payout calculation</p>
+        <Chip tone="teal">Generated 2.4s after settlement</Chip>
+      </div>
+      <table className="ui-table w-full">
+        <thead><tr><Th>Fund partner</Th><Th>Model</Th><Th right>Contribution</Th><Th right>Payout</Th><Th>Status</Th></tr></thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r[0]}>
+              <td className="text-slate-200 font-medium text-[11px]">{r[0]}</td>
+              <td className="text-slate-400 text-[11px]">{r[1]}</td>
+              <td className="text-right num">{fmt(r[2])}</td>
+              <td className="text-right num text-teal-400">{fmt(r[3])}</td>
+              <td>{r[4] === "Paid" ? <Chip tone="teal">Paid</Chip> : <Chip>Scheduled</Chip>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="mt-2 flex items-center justify-between rounded-lg bg-navy-800/60 border border-navy-600/40 px-3 py-2">
+        <span className="text-[10.5px] text-slate-400">Operator retained margin</span>
+        <span className="num text-[11px] text-gold-500">R 4,144</span>
+      </div>
+      <p className="text-[10px] text-slate-500 mt-2">WF-107: payout notifications sent to 4 fund partners via WhatsApp.</p>
+    </div>
+  );
+}
+
 function ReportsScreen() {
   const reports = [
     ["Monthly Portfolio Health", "Comprehensive loan book performance metrics"],
@@ -263,7 +297,7 @@ function InboxScreen() {
   const convos = [
     ["John Doe · Director at Cape Logistics", "Hi John, apologies for that. Let me refresh your access link right now.", "WhatsApp"],
     ["Sarah Botha · Soweto Builders", "I have attached the new contract for the Q4 facility.", "Email"],
-    ["Lerato Khumalo · Pretoria Retailers", "When is my next repayment due?", "SMS"],
+    ["Lerato Khumalo · Pretoria Retailers", "When is the next settlement on my invoice line?", "SMS"],
   ];
   return (
     <div>
@@ -291,7 +325,7 @@ function AutomationScreen() {
     ["WF-101", "New Lead Welcome", "Lead Created", "Send Email"],
     ["WF-103", "Payment Reminder", "3 Days Before Due", "WhatsApp"],
     ["WF-104", "Approval Escalation", "Approval Stalled", "Notify Manager"],
-    ["WF-107", "Nightly Arrears Sweep", "Daily at 02:00", "Flag Overdue + Queue Reminders"],
+    ["WF-107", "Investor Payout Notification", "Deal Settled", "WhatsApp to Fund Partners"],
   ];
   return (
     <div>
@@ -360,7 +394,7 @@ function GenericScreen({ module }) {
           {pillar && <p className="num text-[10px] uppercase tracking-[0.14em] text-teal-500 mb-1">{pillar.name}</p>}
           <p className="text-[13.5px] text-white font-semibold">{module.label}</p>
           <p className="text-[11.5px] text-slate-400 mt-1.5 leading-relaxed max-w-[360px]">
-            {pillar ? pillar.desc : "Part of the APEX Enterprise platform."}
+            {pillar ? pillar.desc : "Part of the 23-module APEX Enterprise platform."}
           </p>
         </div>
       </div>
@@ -392,6 +426,7 @@ const SCREENS = {
   approvals: ApprovalsScreen,
   loanbook: LoanBookScreen,
   collections: CollectionsScreen,
+  investor: InvestorScreen,
   reports: ReportsScreen,
   inbox: InboxScreen,
   automation: AutomationScreen,
@@ -414,7 +449,7 @@ export default function ProductTour() {
             <rect x="1" y="1" width="30" height="30" rx="7" stroke="#2f7a52" strokeWidth="3" />
             <path d="M10 22V10h5.2c4 0 6.8 2.4 6.8 6s-2.8 6-6.8 6H10Z" fill="#2f7a52" />
           </svg>
-          <span className="ui-title">APEX Enterprise — CRM &amp; Loan Management System</span>
+          <span className="ui-title">APEX Enterprise — Unified Financial Operating System</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="ui-kicker hidden sm:block">Acting as: Sarah Dlamini · admin</span>
@@ -425,7 +460,7 @@ export default function ProductTour() {
       <div className="flex">
         {/* Sidebar */}
         <aside className="hidden md:block w-52 shrink-0 bg-navy-900/80 border-r border-navy-600/40 py-3">
-          <p className="ui-kicker px-3 mb-2">Modules · 22</p>
+          <p className="ui-kicker px-3 mb-2">Modules · 23</p>
           <nav className="space-y-0.5 max-h-[430px] overflow-y-auto pr-1" aria-label="APEX modules">
             {TOUR_MODULES.map((m) => (
               <button

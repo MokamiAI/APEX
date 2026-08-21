@@ -5,11 +5,12 @@ import FaqList from "@/components/FaqList";
 import { LEARN, getLearnBySlug, getRelated, CONTENT_REVIEWED_AT } from "@/lib/learn";
 
 const CTA_MAP = {
-  calculator: { title: "Try the arrears & approval impact calculator", body: "Free, no signup. Your numbers stay in your browser.", link: "/calculator", label: "See your impact live", icon: "calc" },
+  calculator: { title: "Try the investor payout calculator", body: "Free, no signup. Your numbers stay in your browser.", link: "/calculator", label: "Calculate your splits live", icon: "calc" },
   audit: { title: "Run the 12-point readiness check", body: "A scored report naming your compliance gaps — and the control that closes each.", link: "/compliance-audit", label: "Start the readiness check", icon: "shield" },
-  platform: { title: "Explore the platform", body: "Twenty-four modules across eight stages — from lead to loan closed.", link: "/platform", label: "See the 24 modules", icon: "grid" },
-  tour: { title: "Tour the interface", body: "Click through the real modules — the decision engine, PAR buckets, audit trail.", link: "/tour", label: "Take the product tour", icon: "play" },
-  how: { title: "See the workflows", body: "Eight deal steps and eight collections steps — with the system doing the remembering.", link: "/how-it-works", label: "See how it works", icon: "flow" },
+  platform: { title: "Explore the platform", body: "Twenty-three modules across nine pillars — from lead to investor paid out.", link: "/platform", label: "See the 23 modules", icon: "grid" },
+  tour: { title: "Tour the interface", body: "Click through the real modules — the settlement engine, PAR buckets, investor ledger.", link: "/tour", label: "Take the product tour", icon: "play" },
+  fund: { title: "For fund partners", body: "Live per-deal visibility, automatic payouts, WF-107 WhatsApp notifications.", link: "/for-fund-partners", label: "See the fund partner view", icon: "fund" },
+  how: { title: "See the workflows", body: "Eleven deal steps and eight collections steps — with the system doing the remembering.", link: "/how-it-works", label: "See how it works", icon: "flow" },
   import: { title: "See your data map itself", body: "Upload a sample workbook and watch the columns map to APEX fields.", link: "/import", label: "Try the import demo", icon: "import" },
 };
 
@@ -18,6 +19,7 @@ const ICON_PATHS = {
   shield: "M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3Z",
   grid: "M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm10 0h6v6h-6v-6Z",
   play: "M8 5v14l11-7L8 5Z",
+  fund: "M3 21V8m6 13V3m6 18v-9m6 9V5",
   flow: "M4 6h16M4 12h16M4 18h16",
   import: "M12 3v12m0 0 4-4m-4 4-4-4M4 21h16",
 };

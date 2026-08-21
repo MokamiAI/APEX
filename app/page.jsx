@@ -2,7 +2,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import HeroAppFrame from "@/components/HeroAppFrame";
 import ProductEmbed from "@/components/ProductEmbed";
-import DecisionDemo from "@/components/DecisionDemo";
+import PayoutDemo from "@/components/PayoutDemo";
 import BeforeAfter from "@/components/BeforeAfter";
 import OutcomesTabs from "@/components/OutcomesTabs";
 import FaqList from "@/components/FaqList";
@@ -12,7 +12,7 @@ import {
 } from "@/lib/data";
 
 export const metadata = {
-  title: "APEX Enterprise — Cloud-Hosted CRM & Loan Management System",
+  title: "APEX Enterprise — The Unified Financial Operating System for Capital Intermediaries",
 };
 
 const faqSchema = {
@@ -49,7 +49,7 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-3.5 mt-9">
               <Link href="/calculator" className="btn btn-primary">
-                Calculate your own impact
+                Calculate your own splits
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -93,7 +93,7 @@ export default function HomePage() {
               <>
                 <HeroAppFrame />
                 <p className="num text-[11px] text-slate-500 mt-3 text-center">
-                  The real APEX Enterprise interface — 24 modules, one system. Replaced by the live sandbox at launch.
+                  The real APEX Enterprise interface — 23 modules, one system. Replaced by the live sandbox at launch.
                 </p>
               </>
             )}
@@ -101,14 +101,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------- PLATFORM AT A GLANCE — 8 stages ---------- */}
+      {/* ---------- PLATFORM AT A GLANCE — 9 pillars ---------- */}
       <section className="bg-navy-900 border-y border-white/5 py-14 lg:py-16">
         <div className="max-w-content mx-auto px-5 lg:px-8">
           <Reveal>
             <div className="flex items-center justify-between flex-wrap gap-3 mb-8">
               <p className="eyebrow">The platform</p>
               <Link href="/platform" className="text-[13px] font-medium text-teal-400 hover:text-teal-300">
-                See all 24 modules →
+                See all 23 modules →
               </Link>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 gap-3">
@@ -129,25 +129,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------- THE DIFFERENTIATOR — decision moment ---------- */}
+      {/* ---------- THE DIFFERENTIATOR — settlement moment ---------- */}
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
           <Reveal>
             <p className="eyebrow mb-4">The differentiator</p>
             <h2 className="font-display font-semibold text-section text-ink leading-tight">
-              The moment an application is ready, every credit decision routes itself.
+              The moment a deal settles, every investor&apos;s return calculates itself.
             </h2>
             <p className="text-[17px] leading-relaxed text-slate-600 mt-6">
-              Inside the platform is a decision engine that scores every application the moment it's
-              submitted. It applies your risk matrix automatically — credit, financials, industry,
-              collateral — and routes the outcome: approved directly, or forwarded to committee the
-              instant your threshold is hit. No forwarding an email and hoping someone picks it up.
+              Inside the platform is a settlement engine that understands the difference between the
+              company that sources the deal and the investors who fund it. When a deal settles, it
+              applies each investor&apos;s model automatically — 50/50 profit split or fixed return,
+              penalty and reward rates included — and shows your retained margin. No formula in a head.
+              No hoping.
             </p>
             <ul className="mt-6 space-y-2.5">
               {[
-                "Automatic routing published to the approvals queue",
-                "WF-104 notifies your committee the moment a threshold is hit",
-                "Every decision logged to the System Audit Trail",
+                "Automatic payout schedule published to the investor ledger",
+                "WF-107 notifies every fund partner via WhatsApp",
+                "Your retained margin visible in the same schedule",
               ].map((b) => (
                 <li key={b} className="flex gap-3 text-[15px] text-slate-700">
                   <span className="text-teal-600 font-bold">✓</span>{b}
@@ -157,7 +158,7 @@ export default function HomePage() {
             <Link href="/calculator" className="btn btn-teal mt-8">Try it on your own numbers</Link>
           </Reveal>
           <Reveal delay={120}>
-            <DecisionDemo />
+            <PayoutDemo />
           </Reveal>
         </div>
       </section>
@@ -246,21 +247,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------- CHANNELS (accountants + IT/admin) ---------- */}
+      {/* ---------- CHANNELS (fund partners + accountants) ---------- */}
       <section className="bg-slate-50 py-20 lg:py-28">
         <div className="max-w-content mx-auto px-5 lg:px-8">
           <Reveal>
-            <p className="eyebrow mb-4">Built for the whole business</p>
+            <p className="eyebrow mb-4">Built for the whole syndication</p>
             <h2 className="font-display font-semibold text-section text-ink max-w-3xl">
-              One platform. Every stakeholder sees what they need.
+              One platform. Three sides of the deal.
             </h2>
             <p className="text-slate-600 mt-4 max-w-2xl text-[15.5px] leading-relaxed">
-              Origination runs the book. Accountants audit it. IT and admin keep it secure and
-              configured. APEX serves all three — because the same live data powers all three views.
+              The operator runs the book. The fund partners fund it. The accountants audit it.
+              APEX serves all three — because the same live data powers all three views.
             </p>
           </Reveal>
           <div className="mt-12 grid lg:grid-cols-2 gap-6">
             <Reveal>
+              <div className="card h-full flex flex-col">
+                <p className="eyebrow mb-3">For fund partners</p>
+                <h3 className="font-display font-semibold text-2xl text-ink mb-3">
+                  See every deal you fund, live.
+                </h3>
+                <p className="text-[15px] text-slate-600 leading-relaxed flex-1">
+                  Live per-deal visibility across every originator. Automatic payout calculations
+                  at settlement. WF-107 WhatsApp notifications. Your capital, transparent.
+                </p>
+                <Link href="/for-fund-partners" className="btn btn-teal mt-6 self-start">See the fund partner view</Link>
+              </div>
+            </Reveal>
+            <Reveal delay={100}>
               <div className="card h-full flex flex-col">
                 <p className="eyebrow mb-3">For accountants & auditors</p>
                 <h3 className="font-display font-semibold text-2xl text-ink mb-3">
@@ -271,19 +285,6 @@ export default function HomePage() {
                   report, maker-checker approvals. No more reconstructing from inboxes.
                 </p>
                 <Link href="/for-accountants" className="btn btn-teal mt-6 self-start">See the auditor&apos;s view</Link>
-              </div>
-            </Reveal>
-            <Reveal delay={100}>
-              <div className="card h-full flex flex-col">
-                <p className="eyebrow mb-3">For IT & admin</p>
-                <h3 className="font-display font-semibold text-2xl text-ink mb-3">
-                  Role-based access, not a shared login.
-                </h3>
-                <p className="text-[15px] text-slate-600 leading-relaxed flex-1">
-                  Six named roles, 2FA and session timeouts, a connected integrations hub, and
-                  every configuration change logged to the same immutable audit trail as the loan book.
-                </p>
-                <Link href="/compliance" className="btn btn-teal mt-6 self-start">See the security &amp; controls</Link>
               </div>
             </Reveal>
           </div>
@@ -369,12 +370,12 @@ export default function HomePage() {
           <Reveal>
             <p className="eyebrow mb-4">When it&apos;s urgent</p>
             <h2 className="font-display font-semibold text-[clamp(2rem,4vw,3.4rem)] text-white leading-tight max-w-3xl mx-auto">
-              Your credit committee meets in an hour. Nobody can find the approval trail.
+              Your payout formula went on leave. Your next settlement is in four days.
             </h2>
             <p className="text-slate-400 mt-6 max-w-xl mx-auto text-[16px] leading-relaxed">
-              Skip the tour — import your book and see your impact now. Or book 20 minutes and
-              we&apos;ll walk your applications through APEX with you, live — origination, risk,
-              committee, disbursement, collections, and your credit decisions routed in front of you.
+              Skip the tour — import your book and see your splits now. Or book 20 minutes and
+              we&apos;ll walk your deals through APEX with you, live — origination, risk, committee,
+              disbursement, collections, and your investor payouts calculated in front of you.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row justify-center gap-3.5" data-suppress-sticky>
               <Link href="/import" className="btn btn-teal !px-8 !py-4 !text-[16px]">
