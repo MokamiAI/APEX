@@ -3,12 +3,10 @@ import Reveal from "@/components/Reveal";
 import HeroAppFrame from "@/components/HeroAppFrame";
 import ProductEmbed from "@/components/ProductEmbed";
 import PayoutDemo from "@/components/PayoutDemo";
-import BeforeAfter from "@/components/BeforeAfter";
-import OutcomesTabs from "@/components/OutcomesTabs";
 import FaqList from "@/components/FaqList";
 import {
-  HERO, HONEST_STATEMENT, TRUST_SIGNALS, OUTCOMES, ICP_COPY,
-  TESTIMONIAL, IMPLEMENTATION, FAQ, PILLARS,
+  HERO, HONEST_STATEMENT, TRUST_SIGNALS, ICP_COPY,
+  TESTIMONIAL, FAQ,
 } from "@/lib/data";
 
 export const metadata = {
@@ -101,34 +99,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------- PLATFORM AT A GLANCE — 9 pillars ---------- */}
-      <section className="bg-navy-900 border-y border-white/5 py-14 lg:py-16">
-        <div className="max-w-content mx-auto px-5 lg:px-8">
-          <Reveal>
-            <div className="flex items-center justify-between flex-wrap gap-3 mb-8">
-              <p className="eyebrow">The platform</p>
-              <Link href="/platform" className="text-[13px] font-medium text-teal-400 hover:text-teal-300">
-                See all 23 modules →
-              </Link>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 gap-3">
-              {PILLARS.map((p, i) => (
-                <Link
-                  key={p.id}
-                  href="/platform"
-                  className="group rounded-xl bg-navy-800/60 border border-navy-600/40 px-3 py-4 text-center hover:border-teal-500/50 transition-colors"
-                >
-                  <p className="num text-[10px] text-teal-500 mb-1.5">{(i + 1).toString().padStart(2, "0")}</p>
-                  <p className="text-[11px] font-semibold text-slate-300 leading-tight group-hover:text-white transition-colors">
-                    {p.name}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       {/* ---------- THE DIFFERENTIATOR — settlement moment ---------- */}
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
@@ -175,38 +145,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------- BEFORE / AFTER ---------- */}
-      <section className="bg-white py-20 lg:py-28">
-        <div className="max-w-content mx-auto px-5 lg:px-8">
-          <Reveal>
-            <p className="eyebrow mb-4">The shift</p>
-            <h2 className="font-display font-semibold text-section text-ink max-w-3xl">
-              How your business runs today vs how it runs on APEX.
-            </h2>
-          </Reveal>
-          <div className="mt-12">
-            <BeforeAfter />
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- WHAT CHANGES FOR YOU ---------- */}
-      <section className="bg-slate-50 py-24 lg:py-32">
-        <div className="max-w-content mx-auto px-5 lg:px-8">
-          <Reveal>
-            <p className="eyebrow mb-4">What changes</p>
-            <h2 className="font-display font-semibold text-section text-ink max-w-3xl">
-              Four things that change the week you go live.
-            </h2>
-          </Reveal>
-          <div className="mt-14">
-            <Reveal delay={80}>
-              <OutcomesTabs outcomes={OUTCOMES} />
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
       {/* ---------- IS THIS YOU? ---------- */}
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14">
@@ -247,47 +185,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------- CHANNELS (fund partners + accountants) ---------- */}
-      <section className="bg-slate-50 py-20 lg:py-28">
+      {/* ---------- GO DEEPER — links out to dedicated pages instead of repeating them here ---------- */}
+      <section className="bg-slate-50 py-14 lg:py-16 border-y border-slate-200">
         <div className="max-w-content mx-auto px-5 lg:px-8">
           <Reveal>
-            <p className="eyebrow mb-4">Built for the whole syndication</p>
-            <h2 className="font-display font-semibold text-section text-ink max-w-3xl">
-              One platform. Three sides of the deal.
-            </h2>
-            <p className="text-slate-600 mt-4 max-w-2xl text-[15.5px] leading-relaxed">
-              The operator runs the book. The fund partners fund it. The accountants audit it.
-              APEX serves all three — because the same live data powers all three views.
-            </p>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+              <div>
+                <p className="eyebrow mb-2">Want the full picture?</p>
+                <p className="text-[15.5px] text-slate-600 max-w-xl leading-relaxed">
+                  The before/after shift, what changes in your first week, the 60-day implementation
+                  plan, and the honest platform comparison — laid out in full on one page.
+                </p>
+              </div>
+              <Link href="/why-apex" className="btn btn-teal shrink-0 self-start sm:self-auto">
+                See the full case for APEX
+              </Link>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[13.5px]">
+              <Link href="/platform" className="text-slate-500 underline underline-offset-4 hover:text-teal-700">All 23 modules on the platform page</Link>
+              <Link href="/for-fund-partners" className="text-slate-500 underline underline-offset-4 hover:text-teal-700">The fund partner view</Link>
+              <Link href="/for-accountants" className="text-slate-500 underline underline-offset-4 hover:text-teal-700">The auditor&apos;s view</Link>
+            </div>
           </Reveal>
-          <div className="mt-12 grid lg:grid-cols-2 gap-6">
-            <Reveal>
-              <div className="card h-full flex flex-col">
-                <p className="eyebrow mb-3">For fund partners</p>
-                <h3 className="font-display font-semibold text-2xl text-ink mb-3">
-                  See every deal you fund, live.
-                </h3>
-                <p className="text-[15px] text-slate-600 leading-relaxed flex-1">
-                  Live per-deal visibility across every originator. Automatic payout calculations
-                  at settlement. WF-107 WhatsApp notifications. Your capital, transparent.
-                </p>
-                <Link href="/for-fund-partners" className="btn btn-teal mt-6 self-start">See the fund partner view</Link>
-              </div>
-            </Reveal>
-            <Reveal delay={100}>
-              <div className="card h-full flex flex-col">
-                <p className="eyebrow mb-3">For accountants & auditors</p>
-                <h3 className="font-display font-semibold text-2xl text-ink mb-3">
-                  A client book you can actually audit.
-                </h3>
-                <p className="text-[15px] text-slate-600 leading-relaxed flex-1">
-                  Audit-ready by default: 7-year trail, field-level POPIA logging, NCA compliance
-                  report, maker-checker approvals. No more reconstructing from inboxes.
-                </p>
-                <Link href="/for-accountants" className="btn btn-teal mt-6 self-start">See the auditor&apos;s view</Link>
-              </div>
-            </Reveal>
-          </div>
         </div>
       </section>
 
@@ -317,32 +236,6 @@ export default function HomePage() {
               ))}
             </dl>
           </Reveal>
-        </div>
-      </section>
-
-      {/* ---------- IMPLEMENTATION ---------- */}
-      <section className="section-dark py-24 lg:py-32">
-        <div className="max-w-content mx-auto px-5 lg:px-8">
-          <Reveal>
-            <p className="eyebrow mb-4">Implementation</p>
-            <h2 className="font-display font-semibold text-section text-white max-w-3xl">
-              You go live in 60 days. Your data comes with you.
-            </h2>
-            <p className="text-slate-400 mt-5 max-w-xl text-[15px] leading-relaxed">
-              The fear enterprise buyers have isn&apos;t the software — it&apos;s the migration. Here&apos;s exactly how that risk is handled.
-            </p>
-          </Reveal>
-          <ol className="mt-14 grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {IMPLEMENTATION.map((s, i) => (
-              <Reveal key={s.step} delay={i * 70}>
-                <li className="card-dark h-full">
-                  <p className="num text-teal-400 text-lg mb-3">{s.step}</p>
-                  <h3 className="text-white font-semibold text-[16px] mb-2.5">{s.title}</h3>
-                  <p className="text-[13.5px] leading-relaxed text-slate-400">{s.body}</p>
-                </li>
-              </Reveal>
-            ))}
-          </ol>
         </div>
       </section>
 
