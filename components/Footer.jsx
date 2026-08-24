@@ -84,19 +84,33 @@ export default function Footer() {
           </div>
           <div>
             <p className="text-[12px] uppercase tracking-[0.14em] text-slate-500 mb-4">Contact</p>
-            <ul className="space-y-2.5 text-[14px] text-slate-400">
-              <li>
-                <a href={`mailto:${COMPANY.email}`} className="hover:text-teal-400 transition-colors">
+            <div className="space-y-5 text-[14px]">
+              <div>
+                <p className="text-white font-semibold text-[13px] mb-1.5">Address</p>
+                <p className="text-slate-400 leading-relaxed">
+                  {COMPANY.address.street}
+                  <br />
+                  {COMPANY.address.area}
+                  <br />
+                  {COMPANY.address.region}, {COMPANY.address.postalCode}
+                </p>
+              </div>
+              <div>
+                <p className="text-white font-semibold text-[13px] mb-1.5">Phone</p>
+                <a
+                  href={`tel:${COMPANY.phone.replace(/\s+/g, "")}`}
+                  className="text-slate-400 hover:text-teal-400 transition-colors"
+                >
+                  {COMPANY.phone}
+                </a>
+              </div>
+              <div>
+                <p className="text-white font-semibold text-[13px] mb-1.5">Email</p>
+                <a href={`mailto:${COMPANY.email}`} className="text-slate-400 hover:text-teal-400 transition-colors">
                   {COMPANY.email}
                 </a>
-              </li>
-              <li>
-                <a href={`mailto:${COMPANY.support}`} className="hover:text-teal-400 transition-colors">
-                  {COMPANY.support}
-                </a>
-              </li>
-              <li className="text-slate-500">PO / invoice / bridging finance, South Africa</li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div className="border-t border-white/5 mt-12 pt-6 flex flex-col md:flex-row justify-between gap-3 text-[12px] text-slate-500">

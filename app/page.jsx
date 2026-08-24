@@ -193,7 +193,7 @@ export default function HomePage() {
               <div>
                 <p className="eyebrow mb-2">Want the full picture?</p>
                 <p className="text-[15.5px] text-slate-600 max-w-xl leading-relaxed">
-                  The before/after shift, what changes in your first week, the 60-day implementation
+                  The before/after shift, what changes in your first week, the onboarding
                   plan, and the honest platform comparison — laid out in full on one page.
                 </p>
               </div>
@@ -279,21 +279,7 @@ export default function HomePage() {
               </Link>
             </div>
             <p className="text-[13.5px] text-slate-400 mt-6 max-w-lg mx-auto leading-relaxed">
-              Go live in 60 days · 90-day warranty after every deployment · 1 enterprise tenant live in production
-            </p>
-            <p className="num text-[12px] text-slate-500 mt-4">
-              Or go deeper now:{" "}
-              <Link href="/tour" className="text-slate-400 underline underline-offset-4 hover:text-teal-400">
-                take the product tour
-              </Link>{" "}
-              ·{" "}
-              <Link href="/compliance-audit" className="text-slate-400 underline underline-offset-4 hover:text-teal-400">
-                run the readiness check
-              </Link>{" "}
-              ·{" "}
-              <Link href="/calculator" className="text-slate-400 underline underline-offset-4 hover:text-teal-400">
-                try the payout calculator
-              </Link>
+              Platform already built · 90-day warranty after every deployment · 1 enterprise tenant live in production
             </p>
           </Reveal>
         </div>

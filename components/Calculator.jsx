@@ -106,7 +106,7 @@ export default function Calculator() {
       track(EVENTS.leadSent, { type: "calculator", nurture: res.nurture || "calculator-user" });
       setCapture((c) => ({ ...c, sent: true, busy: false, calendarUrl: res.calendarUrl || "" }));
     } else {
-      setCapture((c) => ({ ...c, busy: false, error: "Try again, or email marcus@intermediateds.co.za." }));
+      setCapture((c) => ({ ...c, busy: false, error: "Try again, or email sales@intermediateds.co.za." }));
     }
   };
 

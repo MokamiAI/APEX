@@ -60,9 +60,10 @@ export default function ImportPage() {
           <Reveal delay={160}>
             <div className="card h-full">
               <p className="num text-teal-600 text-lg mb-3">03</p>
-              <h2 className="text-[16px] font-semibold text-ink mb-2">Go live in 60 days</h2>
+              <h2 className="text-[16px] font-semibold text-ink mb-2">Go live once you&apos;re onboarded</h2>
               <p className="text-[14px] text-slate-600 leading-relaxed">
-                Full production go-live with a 90-day defects liability period after every deployment.
+                The platform is already built — this is onboarding, not development. Full production
+                go-live with a 90-day defects liability period after every deployment.
               </p>
             </div>
           </Reveal>

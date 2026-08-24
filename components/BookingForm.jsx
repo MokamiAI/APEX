@@ -114,7 +114,7 @@ export default function BookingForm({ purpose = "walkthrough" }) {
       track(EVENTS.leadSent, { type, nurture: res.nurture || "walkthrough-request" });
       setCalendarUrl(res.calendarUrl || "");
     } else {
-      setSubmitError("We couldn't save your request just now — please email marcus@intermediateds.co.za.");
+      setSubmitError("We couldn't save your request just now — please email sales@intermediateds.co.za.");
     }
     setSubmitted(true);
   };

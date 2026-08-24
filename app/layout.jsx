@@ -45,8 +45,16 @@ const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Intermediate Data Systems (Pty) Ltd",
-  email: "marcus@intermediateds.co.za",
-  address: { "@type": "PostalAddress", addressCountry: "ZA" },
+  email: "sales@intermediateds.co.za",
+  telephone: "+27 11 676 6884",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "140 West Street, TBE",
+    addressLocality: "Sandown, Sandton",
+    addressRegion: "Gauteng",
+    postalCode: "2031",
+    addressCountry: "ZA",
+  },
   brand: { "@type": "Brand", name: "APEX Enterprise" },
 };
 

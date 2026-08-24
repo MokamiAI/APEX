@@ -13,7 +13,7 @@ const PRICING_FAQ = [
   },
   {
     q: "How long is the contract?",
-    a: "Standard agreements are annual, with a 60-day deployment included in your first year. Enterprise agreements can be tailored to your entity structure and compliance calendar.",
+    a: "Standard agreements are annual, with guided onboarding included in your first year — the platform is already built, so there's no development timeline to wait on. Enterprise agreements can be tailored to your entity structure and compliance calendar.",
   },
   {
     q: "Are there setup fees?",

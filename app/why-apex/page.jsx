@@ -7,7 +7,7 @@ import { OUTCOMES, IMPLEMENTATION } from "@/lib/data";
 export const metadata = {
   title: "Why APEX Enterprise",
   description:
-    "Why capital intermediaries choose APEX Enterprise: the settlement engine, the compliance controls, the 60-day migration and the 90-day warranty.",
+    "Why capital intermediaries choose APEX Enterprise: the settlement engine, the compliance controls, the guided onboarding and the 90-day warranty.",
 };
 
 const ARGUMENTS = [
@@ -29,7 +29,7 @@ const ARGUMENTS = [
   {
     n: "04",
     h: "Your data moves with you",
-    b: "Import your .xlsx or .csv book directly. Run APEX in parallel until you're comfortable. Your own compliance officer signs off the close. Full go-live in 60 days — with a 90-day defects liability period after every deployment.",
+    b: "Import your .xlsx or .csv book directly. Run APEX in parallel until you're comfortable. Your own compliance officer signs off the close. The platform is already built — what's left is onboarding your book, backed by a 90-day defects liability period after every deployment.",
   },
   {
     n: "05",
@@ -152,10 +152,11 @@ export default function WhyApexPage() {
           <Reveal>
             <p className="eyebrow mb-4">Implementation</p>
             <h2 className="font-display font-semibold text-section text-white max-w-3xl">
-              You go live in 60 days. Your data comes with you.
+              The platform is already built. Your data comes with you.
             </h2>
             <p className="text-slate-400 mt-5 max-w-xl text-[15px] leading-relaxed">
-              The fear enterprise buyers have isn&apos;t the software — it&apos;s the migration. Here&apos;s exactly how that risk is handled.
+              The fear enterprise buyers have isn&apos;t the software — it&apos;s the migration. There&apos;s no development
+              project to wait on; what&apos;s left is onboarding your book. Here&apos;s exactly how that risk is handled.
             </p>
           </Reveal>
           <ol className="mt-14 grid md:grid-cols-2 lg:grid-cols-5 gap-6">

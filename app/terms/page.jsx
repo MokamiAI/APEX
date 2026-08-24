@@ -40,7 +40,7 @@ const SECTIONS = [
   },
   {
     h: "9. Contact",
-    body: "Questions about these terms: marcus@intermediateds.co.za.",
+    body: "Questions about these terms: sales@intermediateds.co.za.",
   },
 ];
 

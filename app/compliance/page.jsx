@@ -84,7 +84,7 @@ export default function CompliancePage() {
                 ["High severity issues", "0"],
                 ["Data migration accuracy", "100%"],
                 ["Tested by", "Client Risk / Compliance / Legal"],
-                ["Time to go-live", "60 days"],
+                ["Deployment type", "Onboarding, not development"],
               ].map(([k, v]) => (
                 <div key={k} className="flex justify-between items-center py-3 border-b border-navy-600/40 last:border-0">
                   <span className="text-[13.5px] text-slate-400">{k}</span>

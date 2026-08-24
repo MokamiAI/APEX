@@ -221,7 +221,7 @@ export default function ComplianceAudit() {
           </div>
 
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-            <a href="mailto:marcus@intermediateds.co.za?subject=Compliance%20readiness%20report%20follow-up" className="btn btn-primary">
+            <a href="mailto:sales@intermediateds.co.za?subject=Compliance%20readiness%20report%20follow-up" className="btn btn-primary">
               Talk to us about closing the gaps
             </a>
             <button

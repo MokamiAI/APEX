@@ -21,7 +21,7 @@ const SECTIONS = [
   },
   {
     h: "4. Consent and withdrawal",
-    body: "Where we rely on consent, it is explicit, informed and recorded. You may withdraw consent at any time by emailing support@intermediateds.co.za, and we will stop the relevant processing without penalty.",
+    body: "Where we rely on consent, it is explicit, informed and recorded. You may withdraw consent at any time by emailing sales@intermediateds.co.za, and we will stop the relevant processing without penalty.",
   },
   {
     h: "5. Sharing and transfers",
@@ -45,7 +45,7 @@ const SECTIONS = [
   },
   {
     h: "10. Contact and complaints",
-    body: "For any privacy matter, contact our team at support@intermediateds.co.za. You also have the right to lodge a complaint with the Information Regulator (South Africa) at inforeg@justice.gov.za.",
+    body: "For any privacy matter, contact our team at sales@intermediateds.co.za. You also have the right to lodge a complaint with the Information Regulator (South Africa) at inforeg@justice.gov.za.",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
               <p className="text-[14px] text-slate-600 leading-relaxed">
                 Questions about your data? Email{" "}
-                <a href="mailto:support@intermediateds.co.za" className="text-teal-700 font-semibold">support@intermediateds.co.za</a>{" "}
+                <a href="mailto:sales@intermediateds.co.za" className="text-teal-700 font-semibold">sales@intermediateds.co.za</a>{" "}
                 — we respond within 21 business days, tracked through our DSAR workflow.
               </p>
             </div>
