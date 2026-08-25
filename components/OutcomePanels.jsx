@@ -14,7 +14,7 @@ function Panel({ title, sub, children, footer }) {
       </div>
       <div className="px-4 py-3">
         {sub && <p className="ui-kicker mb-2">{sub}</p>}
-        {children}
+        <div className="overflow-x-auto -mx-4 px-4">{children}</div>
         {footer && <p className="text-[10.5px] text-slate-500 mt-2.5">{footer}</p>}
       </div>
     </div>

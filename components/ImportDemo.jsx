@@ -218,7 +218,7 @@ export default function ImportDemo() {
           </div>
 
           {/* Records + payout preview */}
-          <div className="grid lg:grid-cols-5 gap-6">
+          <div className="flex flex-col lg:grid lg:grid-cols-5 gap-6">
             <div className="lg:col-span-3 bg-navy-950 rounded-2xl border border-navy-700 overflow-hidden">
               <div className="ui-top !border-navy-600/60">
                 <span className="ui-title">Client Repository — imported records</span>

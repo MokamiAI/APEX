@@ -111,7 +111,7 @@ export default function Calculator() {
   };
 
   return (
-    <div className="grid lg:grid-cols-5 gap-8">
+    <div className="flex flex-col lg:grid lg:grid-cols-5 gap-8">
       {/* Inputs */}
       <div className="lg:col-span-2 space-y-5">
         <div className="grid grid-cols-2 gap-4">
@@ -148,7 +148,7 @@ export default function Calculator() {
               <div key={inv.id} className="border border-slate-200 rounded-xl p-3.5 space-y-3">
                 <div className="flex items-center justify-between gap-2">
                   <input
-                    className="field !py-2 !text-[14px]"
+                    className="field !py-2 !text-[14px] min-w-0"
                     placeholder="Investor / fund name"
                     value={inv.name}
                     onChange={(e) => updateInvestor(inv.id, { name: e.target.value })}
@@ -256,35 +256,37 @@ export default function Calculator() {
               Add at least one investor with a contribution to calculate the split.
             </p>
           ) : (
-            <table className="ui-table w-full">
-              <thead>
-                <tr>
-                  <th>Investor</th>
-                  <th>Model</th>
-                  <th className="text-right">Contribution</th>
-                  <th className="text-right">Return</th>
-                  <th className="text-right">Payout</th>
-                </tr>
-              </thead>
-              <tbody>
-                {result.rows.map((r) => (
-                  <tr key={r.id}>
-                    <td className="text-slate-200 font-medium">{r.name}</td>
-                    <td className="text-slate-400">{r.kind === "fixed" ? `Fixed ${r.rate}%` : "50/50 split"}</td>
-                    <td className="text-right num">{fmtR(r.contribution)}</td>
-                    <td className="text-right num text-teal-400">{fmtR(r.returnAmt)}</td>
-                    <td className="text-right num">{fmtR(r.payout)}</td>
+            <div className="overflow-x-auto -mx-5 sm:-mx-7 px-5 sm:px-7">
+              <table className="ui-table w-full min-w-[480px]">
+                <thead>
+                  <tr>
+                    <th>Investor</th>
+                    <th>Model</th>
+                    <th className="text-right">Contribution</th>
+                    <th className="text-right">Return</th>
+                    <th className="text-right">Payout</th>
                   </tr>
-                ))}
-                <tr className="border-t-2 border-navy-600/60">
-                  <td className="text-white font-semibold">Operator retained margin</td>
-                  <td className="text-slate-400">Your income</td>
-                  <td className="text-right num text-slate-400">—</td>
-                  <td className="text-right num text-slate-400">—</td>
-                  <td className="text-right num text-gold-500 font-semibold">{fmtR(result.retained)}</td>
-                </tr>
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {result.rows.map((r) => (
+                    <tr key={r.id}>
+                      <td className="text-slate-200 font-medium">{r.name}</td>
+                      <td className="text-slate-400">{r.kind === "fixed" ? `Fixed ${r.rate}%` : "50/50 split"}</td>
+                      <td className="text-right num">{fmtR(r.contribution)}</td>
+                      <td className="text-right num text-teal-400">{fmtR(r.returnAmt)}</td>
+                      <td className="text-right num">{fmtR(r.payout)}</td>
+                    </tr>
+                  ))}
+                  <tr className="border-t-2 border-navy-600/60">
+                    <td className="text-white font-semibold">Operator retained margin</td>
+                    <td className="text-slate-400">Your income</td>
+                    <td className="text-right num text-slate-400">—</td>
+                    <td className="text-right num text-slate-400">—</td>
+                    <td className="text-right num text-gold-500 font-semibold">{fmtR(result.retained)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           )}
 
           <div className="grid sm:grid-cols-3 gap-3 mt-5">

@@ -69,12 +69,16 @@ module.exports = {
         mono: ['"Manrope"', "system-ui", "-apple-system", "sans-serif"],
       },
       fontSize: {
-        hero: ["clamp(2.75rem, 5.5vw, 5.5rem)", { lineHeight: "1.02", letterSpacing: "-0.03em" }],
+        hero: ["clamp(2.1rem, 3.6vw, 3.75rem)", { lineHeight: "1.08", letterSpacing: "-0.025em" }],
         section: ["clamp(2rem, 3.6vw, 3.25rem)", { lineHeight: "1.06", letterSpacing: "-0.02em" }],
         lead: ["clamp(1.15rem, 1.6vw, 1.4rem)", { lineHeight: "1.6" }],
       },
       maxWidth: {
         content: "1180px",
+        // Wider cap for full-bleed chrome (header/footer) so nav items don't
+        // look stranded in the middle of very wide monitors, without letting
+        // them sprawl edge-to-edge on ultra-wide displays.
+        wide: "1600px",
       },
       spacing: {
         section: "clamp(5rem, 10vw, 7.5rem)",

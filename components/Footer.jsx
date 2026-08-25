@@ -4,7 +4,7 @@ import { NAV, COMPANY, SITE_VERSION } from "@/lib/data";
 export default function Footer() {
   return (
     <footer className="section-dark border-t border-white/5">
-      <div className="max-w-content mx-auto px-5 lg:px-8 py-14">
+      <div className="max-w-wide mx-auto px-5 lg:px-8 xl:px-12 py-14">
         <div className="grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <div className="mb-4">
@@ -106,7 +106,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-white font-semibold text-[13px] mb-1.5">Email</p>
-                <a href={`mailto:${COMPANY.email}`} className="text-slate-400 hover:text-teal-400 transition-colors">
+                <a href={`mailto:${COMPANY.email}`} className="text-slate-400 hover:text-teal-400 transition-colors break-all">
                   {COMPANY.email}
                 </a>
               </div>

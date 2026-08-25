@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <>
     <header className="sticky top-0 z-50 bg-navy-950/90 backdrop-blur border-b border-white/5">
-      <div className="max-w-content mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+      <div className="max-w-wide mx-auto px-5 lg:px-8 xl:px-12 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/ApexLogo.png" alt="APEX" className="h-6 w-auto brightness-0 invert shrink-0" />

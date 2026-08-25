@@ -31,12 +31,12 @@ export default function OutcomesTabs({ outcomes }) {
 
   return (
     <div
-      className="grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-14 items-start"
+      className="flex flex-col lg:grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-14 lg:items-start"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
       {/* Tab list */}
-      <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible -mx-5 px-5 lg:mx-0 lg:px-0 pb-1 lg:pb-0">
+      <div className="min-w-0 flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible -mx-5 px-5 lg:mx-0 lg:px-0 pb-1 lg:pb-0">
         {outcomes.map((o, i) => (
           <button
             key={o.n}
@@ -76,7 +76,7 @@ export default function OutcomesTabs({ outcomes }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="grid lg:grid-cols-2 gap-10 items-center"
+          className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:items-center"
         >
           <div>
             <p className="num text-teal-600 text-[15px] mb-3">{current.n}</p>

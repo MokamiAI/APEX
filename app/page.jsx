@@ -37,7 +37,7 @@ export default function HomePage() {
         {/* Decorative circles — the same motif as the real APEX product's own auth screens */}
         <div className="pointer-events-none absolute -top-40 -left-40 w-[480px] h-[480px] rounded-full bg-teal-400/10" />
         <div className="pointer-events-none absolute -bottom-32 -right-32 w-[360px] h-[360px] rounded-full bg-teal-400/10" />
-        <div className="max-w-content mx-auto px-5 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32 grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-content mx-auto px-5 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32 grid lg:grid-cols-2 gap-14 items-start">
           <div>
             <p className="eyebrow mb-5">{HERO.eyebrow}</p>
             <h1 className="font-display font-semibold text-hero text-white">
@@ -85,15 +85,15 @@ export default function HomePage() {
           </div>
 
           <Reveal delay={120}>
-            {/* Sandbox embed point: set NEXT_PUBLIC_APEX_SANDBOX_URL to embed the live platform */}
-            <ProductEmbed />
+            <div className="hero-panel-wrap">
+              {/* Sandbox embed point: set NEXT_PUBLIC_APEX_SANDBOX_URL to embed the live platform */}
+              <ProductEmbed />
+              {!process.env.NEXT_PUBLIC_APEX_SANDBOX_URL && <HeroAppFrame />}
+            </div>
             {!process.env.NEXT_PUBLIC_APEX_SANDBOX_URL && (
-              <>
-                <HeroAppFrame />
-                <p className="num text-[11px] text-slate-500 mt-3 text-center">
-                  The real APEX Enterprise interface — 23 modules, one system. Replaced by the live sandbox at launch.
-                </p>
-              </>
+              <p className="num text-[11px] text-slate-500 mt-3 text-center">
+                The real APEX Enterprise interface — 23 modules, one system. Replaced by the live sandbox at launch.
+              </p>
             )}
           </Reveal>
         </div>
@@ -211,7 +211,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- TESTIMONIAL ---------- */}
-      <section className="bg-white pb-24 lg:pb-32">
+      <section className="bg-white pb-8 lg:pb-10">
         <div className="max-w-content mx-auto px-5 lg:px-8">
           <Reveal>
             <div className="border-t border-slate-200 pt-16">

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { track, EVENTS } from "@/lib/analytics";
-import { fmtR } from "@/lib/format";
+import { fmtR, fmtNum } from "@/lib/format";
 
 function Input({ label, value, onChange, suffix }) {
   return (
@@ -48,7 +48,7 @@ export default function RoiCalculator() {
   }, [deals, investors, minutes, hourly, errorRate, lossPerError]);
 
   return (
-    <div className="grid lg:grid-cols-5 gap-8">
+    <div className="flex flex-col lg:grid lg:grid-cols-5 gap-8">
       <div className="lg:col-span-2 space-y-5">
         <Input label="Deals settled per month" value={deals} onChange={setDeals} suffix="deals" />
         <Input label="Investors / fund partners per deal" value={investors} onChange={setInvestors} suffix="investors" />
@@ -66,7 +66,7 @@ export default function RoiCalculator() {
           <div className="grid sm:grid-cols-2 gap-3 mt-6">
             <div className="rounded-xl bg-navy-800/60 border border-navy-600/40 p-4">
               <p className="ui-kicker">Hours a year on recalculations</p>
-              <p className="num text-2xl text-white mt-1">{Math.round(r.hoursManual).toLocaleString()} hrs</p>
+              <p className="num text-2xl text-white mt-1">{fmtNum(r.hoursManual)} hrs</p>
             </div>
             <div className="rounded-xl bg-navy-800/60 border border-navy-600/40 p-4">
               <p className="ui-kicker">Cost of that time</p>
