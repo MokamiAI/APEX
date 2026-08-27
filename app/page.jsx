@@ -37,8 +37,8 @@ export default function HomePage() {
         {/* Decorative circles — the same motif as the real APEX product's own auth screens */}
         <div className="pointer-events-none absolute -top-40 -left-40 w-[480px] h-[480px] rounded-full bg-teal-400/10" />
         <div className="pointer-events-none absolute -bottom-32 -right-32 w-[360px] h-[360px] rounded-full bg-teal-400/10" />
-        <div className="max-w-content mx-auto px-5 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32 grid lg:grid-cols-2 gap-14 items-start">
-          <div>
+        <div className="max-w-content mx-auto px-5 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32 grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+          <div className="min-w-0">
             <p className="eyebrow mb-5">{HERO.eyebrow}</p>
             <h1 className="font-display font-semibold text-hero text-white">
               {HERO.headlineA}
@@ -101,7 +101,7 @@ export default function HomePage() {
 
       {/* ---------- THE DIFFERENTIATOR — settlement moment ---------- */}
       <section className="bg-white py-24 lg:py-32">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <Reveal>
             <p className="eyebrow mb-4">The differentiator</p>
             <h2 className="font-display font-semibold text-section text-ink leading-tight">
@@ -147,7 +147,7 @@ export default function HomePage() {
 
       {/* ---------- IS THIS YOU? ---------- */}
       <section className="bg-white py-24 lg:py-32">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14">
           <Reveal>
             <p className="eyebrow mb-4">Is this you?</p>
             <h2 className="font-display font-semibold text-section text-ink leading-tight">
@@ -241,7 +241,7 @@ export default function HomePage() {
 
       {/* ---------- FAQ ---------- */}
       <section className="bg-white py-24 lg:py-32">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-[minmax(0,340px)_1fr] gap-14">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-[minmax(0,340px)_1fr] gap-14">
           <div className="lg:sticky lg:top-24 self-start">
             <Reveal>
               <p className="eyebrow mb-4">Questions</p>

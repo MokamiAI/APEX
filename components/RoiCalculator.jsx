@@ -63,7 +63,7 @@ export default function RoiCalculator() {
           <p className="ui-kicker !text-slate-500 mb-1">What running payouts by hand is costing you</p>
           <p className="font-display text-2xl font-semibold text-white mt-1">Annual impact of manual settlements</p>
 
-          <div className="grid sm:grid-cols-2 gap-3 mt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
             <div className="rounded-xl bg-navy-800/60 border border-navy-600/40 p-4">
               <p className="ui-kicker">Hours a year on recalculations</p>
               <p className="num text-2xl text-white mt-1">{fmtNum(r.hoursManual)} hrs</p>

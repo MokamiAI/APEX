@@ -73,7 +73,7 @@ export default function HowItWorksPage() {
       </section>
 
       <section className="bg-white py-20 lg:py-28">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(1.7rem,3vw,2.6rem)] text-ink leading-tight">
               The settlement moment is where APEX earns its keep.

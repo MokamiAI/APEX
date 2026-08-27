@@ -26,7 +26,7 @@ export default function PlatformPage() {
         <div className="max-w-content mx-auto px-5 lg:px-8 space-y-20">
           {PILLARS.map((p, i) => (
             <Reveal key={p.id}>
-              <div className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-start ${i % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
+              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start ${i % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
                 <div>
                   <p className="num text-teal-600 text-[14px] mb-2">{(i + 1).toString().padStart(2, "0")}</p>
                   <h2 className="font-display font-semibold text-2xl sm:text-3xl text-ink mb-4">{p.name}</h2>
@@ -36,7 +36,7 @@ export default function PlatformPage() {
                   <p className="text-[12px] uppercase tracking-[0.14em] text-slate-400 font-semibold mb-4">
                     What&apos;s inside
                   </p>
-                  <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
                     {p.modules.map((m) => (
                       <li key={m} className="flex gap-2.5 text-[14.5px] text-slate-700">
                         <span className="text-teal-600 mt-0.5">—</span>{m}
@@ -63,7 +63,7 @@ export default function PlatformPage() {
               WF-107, which notifies fund partners the moment a settlement payout is calculated.
             </p>
           </Reveal>
-          <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {WORKFLOW_RULES.map((w, i) => (
               <Reveal key={w.id} delay={(i % 4) * 60}>
                 <div className="bg-white border border-slate-200 rounded-2xl p-5 h-full">
@@ -87,7 +87,7 @@ export default function PlatformPage() {
 
       {/* Risk engine */}
       <section className="bg-navy-950 py-20 lg:py-28">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <Reveal>
             <p className="eyebrow mb-4">The risk engine</p>
             <h2 className="font-display font-semibold text-[clamp(1.7rem,3vw,2.6rem)] text-white leading-tight">
@@ -147,7 +147,7 @@ export default function PlatformPage() {
               Connect your third-party financial ecosystem.
             </h2>
           </Reveal>
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {INTEGRATIONS.map((intg, i) => (
               <Reveal key={intg.name} delay={(i % 4) * 60}>
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 h-full">
@@ -163,7 +163,7 @@ export default function PlatformPage() {
 
       {/* Reporting studio */}
       <section className="bg-slate-50 py-20 lg:py-28">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <Reveal>
             <p className="eyebrow mb-4">Reporting studio</p>
             <h2 className="font-display font-semibold text-[clamp(1.7rem,3vw,2.6rem)] text-ink leading-tight">
@@ -203,7 +203,7 @@ export default function PlatformPage() {
               session timeouts enforce who can see what.
             </p>
           </Reveal>
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {ROLES.map((role, i) => (
               <Reveal key={role.name} delay={(i % 3) * 60}>
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 h-full">

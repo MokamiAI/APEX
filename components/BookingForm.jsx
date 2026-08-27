@@ -189,7 +189,7 @@ export default function BookingForm({ purpose = "walkthrough" }) {
           <div className="anim-settle">
             <h3 className="font-display font-semibold text-2xl text-ink mb-2">What do you fund?</h3>
             <p className="text-[14px] text-slate-500 mb-6">Helps us bring the right people to the session.</p>
-            <div className="grid sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {FUND_TYPES.map((t) => {
                 const on = form.fundTypes.includes(t);
                 return (
@@ -225,7 +225,7 @@ export default function BookingForm({ purpose = "walkthrough" }) {
             ].map(([key, label, options, hint]) => (
               <div key={key}>
                 <p className="field-label">{label}</p>
-                <div className="grid sm:grid-cols-2 gap-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {options.map((o) => {
                     const on = form[key] === o;
                     return (
@@ -254,7 +254,7 @@ export default function BookingForm({ purpose = "walkthrough" }) {
             <p className="text-[14px] text-slate-500 mb-5">
               We&apos;ll hold your slot and confirm within one business day.
             </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
               <button
                 type="button"
                 onClick={() => set("slot", "no-preference")}
@@ -290,7 +290,7 @@ export default function BookingForm({ purpose = "walkthrough" }) {
               <h3 className="font-display font-semibold text-2xl text-ink mb-1">Your details</h3>
               <p className="text-[14px] text-slate-500">We&apos;ll confirm the session within one business day.</p>
             </div>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="field-label" htmlFor="bk-name">Your name *</label>
                 <input id="bk-name" className="field" value={form.name} onChange={(e) => set("name", e.target.value)} placeholder="e.g. Thabo Mokoena" />
@@ -302,7 +302,7 @@ export default function BookingForm({ purpose = "walkthrough" }) {
                 {errors.company && <p className="text-[13px] text-red-600 mt-1.5">{errors.company}</p>}
               </div>
             </div>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="field-label" htmlFor="bk-email">Email</label>
                 <input id="bk-email" type="email" className="field" value={form.email} onChange={(e) => set("email", e.target.value)} placeholder="you@company.co.za" />

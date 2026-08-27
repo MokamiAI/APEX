@@ -35,7 +35,7 @@ export default function ResourcesPage() {
                 <Reveal>
                   <p className="eyebrow mb-6">{cat}</p>
                 </Reveal>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {items.map((l, i) => (
                     <Reveal key={l.slug} delay={(i % 3) * 60}>
                       <Link href={`/learn/${l.slug}`} className="card group h-full block hover:border-teal-500/50 transition-colors">

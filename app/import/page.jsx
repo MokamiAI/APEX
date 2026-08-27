@@ -36,7 +36,7 @@ export default function ImportPage() {
       </section>
 
       <section className="bg-slate-50 py-16 lg:py-24">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-3 gap-8">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
           <Reveal>
             <div className="card h-full">
               <p className="num text-teal-600 text-lg mb-3">01</p>

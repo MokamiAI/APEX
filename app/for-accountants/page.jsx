@@ -27,7 +27,7 @@ export default function AccountantsPage() {
               A client book you can actually audit — without the archaeology.
             </h2>
           </Reveal>
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {ACCOUNTANT.why.map((w, i) => (
               <Reveal key={w.title} delay={(i % 4) * 60}>
                 <div className="card h-full">
@@ -42,7 +42,7 @@ export default function AccountantsPage() {
       </section>
 
       <section className="bg-slate-50 py-20 lg:py-28">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <Reveal>
             <p className="eyebrow mb-4">The referral programme</p>
             <h2 className="font-display font-semibold text-[clamp(1.7rem,3vw,2.6rem)] text-ink leading-tight">

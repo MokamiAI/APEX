@@ -55,7 +55,7 @@ export default function PricingPage() {
       {/* Tiers */}
       <section className="bg-white pb-20 lg:pb-28">
         <div className="max-w-content mx-auto px-5 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-6 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
             {TIERS.map((t, i) => (
               <Reveal key={t.name} delay={i * 80}>
                 <div className={`h-full rounded-2xl p-8 flex flex-col ${
@@ -100,7 +100,7 @@ export default function PricingPage() {
               What you get from the first week — before you&apos;ve finished your coffee.
             </h2>
           </Reveal>
-          <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <ul className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {FIRST_WEEK.map((f, i) => (
               <Reveal key={f} delay={(i % 3) * 60}>
                 <li className="bg-white border border-slate-200 rounded-2xl p-6 flex gap-4 h-full">
@@ -115,7 +115,7 @@ export default function PricingPage() {
 
       {/* Pricing FAQ */}
       <section className="bg-white py-20 lg:py-28">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-[minmax(0,340px)_1fr] gap-14">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-[minmax(0,340px)_1fr] gap-14">
           <Reveal>
             <p className="eyebrow mb-4">Pricing questions</p>
             <h2 className="font-display font-semibold text-section text-ink">Asked straight.</h2>

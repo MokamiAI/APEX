@@ -35,7 +35,7 @@ export default function TourPage() {
       </section>
 
       <section className="bg-white py-20 lg:py-28">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-3 gap-8">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
           <Reveal>
             <div className="card h-full">
               <p className="eyebrow mb-3">The differentiator</p>

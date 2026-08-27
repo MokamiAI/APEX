@@ -8,7 +8,7 @@ export default function FundPartnersPage() {
   return (
     <>
       <section className="section-dark">
-        <div className="max-w-content mx-auto px-5 lg:px-8 pt-20 pb-16 lg:pt-24 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-content mx-auto px-5 lg:px-8 pt-20 pb-16 lg:pt-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <Reveal>
             <p className="eyebrow mb-4">For fund partners</p>
             <h1 className="font-display font-semibold text-section text-white">
@@ -56,7 +56,7 @@ export default function FundPartnersPage() {
               Four things your fund gains the day originators run on APEX.
             </h2>
           </Reveal>
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {FUND_PARTNER.why.map((w, i) => (
               <Reveal key={w.title} delay={(i % 4) * 60}>
                 <div className="card h-full">
@@ -71,7 +71,7 @@ export default function FundPartnersPage() {
       </section>
 
       <section className="bg-navy-950 py-20 lg:py-28">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <Reveal>
             <p className="eyebrow mb-4">The two-sided model</p>
             <h2 className="font-display font-semibold text-[clamp(1.7rem,3vw,2.6rem)] text-white leading-tight">

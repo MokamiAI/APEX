@@ -28,7 +28,7 @@ export default function BookPage() {
       </section>
 
       <section className="bg-slate-50 py-16 lg:py-24">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-12 items-start">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <Reveal>
             <BookingForm purpose="walkthrough" />
           </Reveal>

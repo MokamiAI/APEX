@@ -20,7 +20,7 @@ export default function PricingConfigurator() {
   return (
     <div className="rounded-2xl border border-slate-200 bg-slate-50 p-7 lg:p-10">
       <p className="eyebrow mb-6">The 3-click guide</p>
-      <div className="grid md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {FIELDS.map((field) => (
           <div key={field.key}>
             <p className="field-label">{field.label}</p>

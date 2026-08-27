@@ -206,7 +206,7 @@ export default function ImportDemo() {
           {/* Column mapping */}
           <div>
             <p className="ui-kicker !text-slate-500 mb-3">Column mapping</p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {data.detected.map((d) => (
                 <div key={d.label} className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                   <p className="num text-[11px] text-slate-400">Source column</p>

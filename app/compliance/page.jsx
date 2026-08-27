@@ -37,7 +37,7 @@ export default function CompliancePage() {
       {/* Controls */}
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-content mx-auto px-5 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {COMPLIANCE_CONTROLS.map((c, i) => (
               <Reveal key={c.name} delay={(i % 4) * 60}>
                 <div className="card h-full flex flex-col">
@@ -57,7 +57,7 @@ export default function CompliancePage() {
 
       {/* Validation */}
       <section className="bg-navy-950 py-20 lg:py-28">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <Reveal>
             <p className="eyebrow mb-4">Independently validated</p>
             <h2 className="font-display font-semibold text-[clamp(1.7rem,3vw,2.6rem)] text-white leading-tight">
@@ -105,7 +105,7 @@ export default function CompliancePage() {
               The infrastructure facts your Risk officer will ask for.
             </h2>
           </Reveal>
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SECURITY_FACTS.map((f, i) => (
               <Reveal key={f.k} delay={(i % 4) * 60}>
                 <div className="bg-white border border-slate-200 rounded-2xl p-6 h-full">
@@ -122,7 +122,7 @@ export default function CompliancePage() {
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-content mx-auto px-5 lg:px-8">
           <Reveal>
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 lg:p-12 grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-center">
               <div>
                 <h2 className="font-display font-semibold text-[clamp(1.5rem,2.6vw,2.2rem)] text-ink leading-tight">
                   Not sure where your compliance stands? Get the 12-point readiness check.

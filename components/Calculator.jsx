@@ -289,7 +289,7 @@ export default function Calculator() {
             </div>
           )}
 
-          <div className="grid sm:grid-cols-3 gap-3 mt-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-5">
             <div className="rounded-xl bg-navy-800/60 border border-navy-600/40 p-4">
               <p className="ui-kicker">Total investor payouts</p>
               <p className="num text-white text-lg mt-1">{fmtR(result.totalPayout)}</p>

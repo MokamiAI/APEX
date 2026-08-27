@@ -77,7 +77,7 @@ export default function WhyApexPage() {
       </section>
 
       <section className="bg-slate-50 py-20 lg:py-28">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {ARGUMENTS.map((a, i) => (
             <Reveal key={a.n} delay={(i % 3) * 70}>
               <div className="card h-full">
@@ -108,7 +108,7 @@ export default function WhyApexPage() {
       </section>
 
       <section className="bg-navy-950 py-20 lg:py-28">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <Reveal>
             <p className="eyebrow mb-4">The honest comparison</p>
             <h2 className="font-display font-semibold text-[clamp(1.7rem,3vw,2.6rem)] text-white leading-tight">
@@ -159,7 +159,7 @@ export default function WhyApexPage() {
               project to wait on; what&apos;s left is onboarding your book. Here&apos;s exactly how that risk is handled.
             </p>
           </Reveal>
-          <ol className="mt-14 grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <ol className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {IMPLEMENTATION.map((s, i) => (
               <Reveal key={s.step} delay={i * 70}>
                 <li className="card-dark h-full">

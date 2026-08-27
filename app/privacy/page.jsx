@@ -65,7 +65,7 @@ export default function PrivacyPage() {
         </div>
       </section>
       <section className="bg-white py-16 lg:py-20">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-[minmax(0,340px)_1fr] gap-14">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-[minmax(0,340px)_1fr] gap-14">
           <div className="lg:sticky lg:top-24 self-start">
             <p className="eyebrow mb-4">On this page</p>
             <ul className="space-y-2.5">

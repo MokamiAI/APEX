@@ -35,7 +35,7 @@ export default function RoiPage() {
       </section>
 
       <section className="bg-slate-50 py-16 lg:py-20">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-3 gap-6">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
           <Reveal>
             <div className="card h-full">
               <p className="eyebrow mb-2">The fix</p>
