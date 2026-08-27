@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/lib/data";
+
 export default function robots() {
   return {
     rules: [
@@ -6,7 +8,7 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: "https://apex.capital/sitemap.xml",
-    host: "https://apex.capital",
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

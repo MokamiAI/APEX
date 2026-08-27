@@ -1,6 +1,7 @@
 import { LEARN } from "@/lib/learn";
+import { SITE_URL } from "@/lib/data";
 
-const BASE = "https://apex.capital";
+const BASE = SITE_URL;
 
 const STATIC_PAGES = [
   "", "/platform", "/tour", "/how-it-works", "/compliance", "/compliance-audit",
