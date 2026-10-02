@@ -107,7 +107,7 @@ export default function WhyApexPage() {
         </div>
       </section>
 
-      <section className="bg-navy-950 py-20 lg:py-28">
+      <section className="section-dark py-20 lg:py-28">
         <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
           <Reveal>
             <p className="eyebrow mb-4">The honest comparison</p>

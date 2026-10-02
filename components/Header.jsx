@@ -11,12 +11,12 @@ export default function Header() {
   const [navOpen, setNavOpen] = useState(false);
   return (
     <>
-    <header className="sticky top-0 z-50 bg-navy-950/90 backdrop-blur border-b border-white/5">
+    <header className="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-slate-200/80">
       <div className="max-w-wide mx-auto px-5 lg:px-8 xl:px-12 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/ApexLogo.png" alt="APEX" className="h-6 w-auto brightness-0 invert shrink-0" />
-          <span className="hidden sm:block text-[11px] uppercase tracking-[0.14em] text-slate-400 border-l border-white/15 pl-3">
+          <img src="/ApexLogo.png" alt="APEX" className="h-6 w-auto shrink-0" />
+          <span className="hidden sm:block text-[11px] uppercase tracking-[0.14em] font-semibold text-teal-600 border-l border-mint-300 pl-3">
             Unified Financial Operating System
           </span>
         </Link>
@@ -27,7 +27,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               className={`text-[14px] font-medium transition-colors ${
-                path === item.href ? "text-white" : "text-slate-400 hover:text-white"
+                path === item.href ? "text-teal-700" : "text-slate-600 hover:text-ink"
               }`}
             >
               {item.label}
@@ -45,7 +45,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setNavOpen(true)}
-            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg text-slate-300 hover:text-white hover:bg-white/5"
+            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg text-slate-600 hover:text-ink hover:bg-slate-100"
             aria-label="Open menu"
             aria-expanded={navOpen}
           >

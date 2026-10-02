@@ -20,6 +20,14 @@ module.exports = {
           700: "#2a5a41",
           600: "#3d7355",
         },
+        // Light brand tints (from --color-primary-pale #d8f3dc) for the light theme:
+        // section bands, hero washes, highlight cards.
+        mint: {
+          50: "#f4faf6",
+          100: "#e9f5ed",
+          200: "#d8f3dc",
+          300: "#b7e4c2",
+        },
         ink: "#111827",
         slate: {
           50: "#f4f6f5",

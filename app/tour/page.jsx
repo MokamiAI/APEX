@@ -23,7 +23,7 @@ export default function TourPage() {
         </div>
       </section>
 
-      <section className="bg-navy-950 py-16 lg:py-24">
+      <section className="section-dark py-16 lg:py-24">
         <div className="max-w-content mx-auto px-5 lg:px-8">
           <Reveal>
             <ProductTour />

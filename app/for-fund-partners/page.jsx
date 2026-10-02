@@ -70,7 +70,7 @@ export default function FundPartnersPage() {
         </div>
       </section>
 
-      <section className="bg-navy-950 py-20 lg:py-28">
+      <section className="section-dark py-20 lg:py-28">
         <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
           <Reveal>
             <p className="eyebrow mb-4">The two-sided model</p>
@@ -91,7 +91,7 @@ export default function FundPartnersPage() {
           <Reveal delay={120}>
             <div className="grid grid-cols-2 gap-5">
               {FUND_PARTNER.stats.map((s) => (
-                <div key={s.label} className="bg-navy-900 border border-navy-700 rounded-2xl p-6">
+                <div key={s.label} className="bg-white border border-slate-200 rounded-2xl p-6">
                   <p className="num text-3xl text-teal-400">{s.value}</p>
                   <p className="text-[13px] text-slate-400 mt-2 leading-snug">{s.label}</p>
                 </div>

@@ -28,7 +28,7 @@ export default function MobileNav({ open, onClose }) {
       {open && (
         <>
           <motion.div
-            className="fixed inset-0 z-[60] bg-navy-950/70 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-[60] bg-ink/30 backdrop-blur-sm lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -37,7 +37,7 @@ export default function MobileNav({ open, onClose }) {
             aria-hidden="true"
           />
           <motion.div
-            className="fixed inset-y-0 right-0 z-[70] w-[86%] max-w-sm bg-navy-950 border-l border-white/10 lg:hidden flex flex-col"
+            className="fixed inset-y-0 right-0 z-[70] w-[86%] max-w-sm bg-white border-l border-slate-200 lg:hidden flex flex-col"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
@@ -46,12 +46,12 @@ export default function MobileNav({ open, onClose }) {
             aria-modal="true"
             aria-label="Site navigation"
           >
-            <div className="flex items-center justify-between h-16 px-5 border-b border-white/10 shrink-0">
-              <span className="font-display text-lg font-semibold text-white">Menu</span>
+            <div className="flex items-center justify-between h-16 px-5 border-b border-slate-200 shrink-0">
+              <span className="font-display text-lg font-semibold text-ink">Menu</span>
               <button
                 type="button"
                 onClick={onClose}
-                className="w-9 h-9 flex items-center justify-center rounded-lg text-slate-300 hover:text-white hover:bg-white/5"
+                className="w-9 h-9 flex items-center justify-center rounded-lg text-slate-500 hover:text-ink hover:bg-slate-100"
                 aria-label="Close menu"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -65,14 +65,14 @@ export default function MobileNav({ open, onClose }) {
                   key={item.href}
                   href={item.href}
                   className={`block px-3 py-3.5 rounded-lg text-[16px] font-medium ${
-                    path === item.href ? "text-white bg-white/5" : "text-slate-300 hover:text-white hover:bg-white/5"
+                    path === item.href ? "text-teal-700 bg-mint-100" : "text-slate-600 hover:text-ink hover:bg-slate-100"
                   }`}
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
-            <div className="p-4 border-t border-white/10 shrink-0">
+            <div className="p-4 border-t border-slate-200 shrink-0">
               <Link href="/book" className="btn btn-primary w-full">
                 Book a walkthrough
               </Link>

@@ -5,8 +5,8 @@ import ProductEmbed from "@/components/ProductEmbed";
 import PayoutDemo from "@/components/PayoutDemo";
 import FaqList from "@/components/FaqList";
 import {
-  HERO, HONEST_STATEMENT, TRUST_SIGNALS, ICP_COPY,
-  TESTIMONIAL, FAQ,
+  HERO, TRUST_SIGNALS, ICP_COPY, TESTIMONIAL, FAQ,
+  PLATFORM_HIGHLIGHTS, GO_LIVE_STEPS, INTEGRATIONS,
 } from "@/lib/data";
 
 export const metadata = {
@@ -23,6 +23,31 @@ const faqSchema = {
   })),
 };
 
+const ICONS = {
+  users: "M16 19v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1M9 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm13 9v-1a4 4 0 0 0-3-3.9M16 4.1a3 3 0 0 1 0 5.8",
+  check: "M9 13l2 2 4-4M8 3h8l4 4v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h3Z",
+  coins: "M12 3v18M17 7H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6",
+  phone: "M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z",
+  chart: "M4 20V10m6 10V4m6 16v-7m4 7H2",
+  shield: "M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3Zm-2.5 9.5 2 2 4-4",
+};
+
+function Icon({ name }) {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d={ICONS[name]} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function Arrow() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -30,102 +55,135 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      {/* ---------- HERO — platform-first ---------- */}
-      <section className="section-dark relative overflow-hidden">
+
+      {/* ---------- HERO ---------- */}
+      <section className="relative overflow-hidden bg-mint-50">
         <div className="pointer-events-none absolute inset-0"
-          style={{ background: "radial-gradient(900px 500px at 78% -10%, rgba(216,243,220,0.14), transparent 60%)" }} />
-        {/* Decorative circles — the same motif as the real APEX product's own auth screens */}
-        <div className="pointer-events-none absolute -top-40 -left-40 w-[480px] h-[480px] rounded-full bg-teal-400/10" />
-        <div className="pointer-events-none absolute -bottom-32 -right-32 w-[360px] h-[360px] rounded-full bg-teal-400/10" />
-        <div className="max-w-content mx-auto px-5 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32 grid lg:grid-cols-2 gap-14 items-start">
-          <div>
+          style={{ background: "radial-gradient(900px 520px at 80% -10%, rgba(183,228,194,0.7), transparent 62%), radial-gradient(600px 400px at -10% 110%, rgba(216,243,220,0.8), transparent 60%)" }} />
+        <div className="relative max-w-content mx-auto px-5 lg:px-8 pt-16 pb-20 lg:pt-24 lg:pb-24 grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] gap-12 lg:gap-14 items-center">
+          <div className="min-w-0">
             <p className="eyebrow mb-5">{HERO.eyebrow}</p>
-            <h1 className="font-display font-semibold text-hero text-white">
-              {HERO.headlineA}
+            <h1 className="font-display font-semibold text-hero text-ink">
+              {HERO.headlineA}{" "}
+              <span className="text-teal-500">{HERO.headlineAccent}</span>
             </h1>
-            <p className="text-lead text-slate-300 mt-7 max-w-xl">{HERO.subheadline}</p>
+            <p className="text-lead text-slate-600 mt-6 max-w-xl">{HERO.subheadline}</p>
 
-            <div className="flex flex-col sm:flex-row gap-3.5 mt-9">
-              <Link href="/calculator" className="btn btn-primary">
-                Calculate your own splits
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+            <div className="flex flex-col sm:flex-row gap-3 mt-8">
+              <Link href="/book" className="btn btn-primary">
+                Book a 20-minute walkthrough
+                <Arrow />
               </Link>
-              <Link href="/book" className="btn btn-ghost">Book a 20-minute walkthrough</Link>
+              <Link href="/calculator" className="btn btn-outline">Calculate your own splits</Link>
             </div>
-            <p className="text-[13px] text-slate-400 mt-4">
-              Or explore first:{" "}
-              <Link href="/platform" className="text-slate-400 underline underline-offset-4 hover:text-teal-300">the platform</Link>
-              {" "}·{" "}
-              <Link href="/how-it-works" className="text-slate-400 underline underline-offset-4 hover:text-teal-300">how a deal flows</Link>
-              {" "}·{" "}
-              <Link href="/roi" className="text-slate-400 underline underline-offset-4 hover:text-teal-300">what it&apos;s costing you</Link>
-            </p>
 
-            <dl className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-12 border-t border-white/10 pt-7">
-              {TRUST_SIGNALS.map((s) => (
-                <div key={s.label}>
-                  <dt className="sr-only">{s.label}</dt>
-                  <dd className="num text-2xl text-white">{s.value}</dd>
-                  <dd className="text-[12.5px] text-slate-400 mt-1 leading-snug">{s.label}</dd>
-                </div>
-              ))}
-            </dl>
-
-            <div className="mt-8 flex items-start gap-3 rounded-xl bg-teal-500/10 border border-teal-500/30 px-4 py-3 max-w-xl">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 shrink-0" aria-hidden="true">
-                <path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3Z" stroke="#6bc490" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            <div className="mt-8 inline-flex items-start gap-2.5 rounded-xl bg-white/80 border border-mint-300 px-4 py-3 max-w-xl shadow-sm">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 shrink-0 text-teal-500" aria-hidden="true">
+                <path d={ICONS.shield} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <p className="text-[13.5px] text-slate-200 leading-relaxed">
-                <span className="font-semibold text-white">UAT passed by the client&apos;s own Risk, Compliance &amp; Legal Officer</span>{" "}
-                — zero critical or high-severity issues before go-live. One enterprise tenant live in production.
+              <p className="text-[13.5px] text-slate-600 leading-relaxed">
+                <span className="font-semibold text-ink">Live in production.</span>{" "}
+                UAT passed by the client&apos;s own Risk, Compliance &amp; Legal Officer — zero critical issues at go-live.
               </p>
             </div>
           </div>
 
-          <Reveal delay={120}>
+          <Reveal delay={120} className="min-w-0">
             <div className="hero-panel-wrap">
               {/* Sandbox embed point: set NEXT_PUBLIC_APEX_SANDBOX_URL to embed the live platform */}
               <ProductEmbed />
               {!process.env.NEXT_PUBLIC_APEX_SANDBOX_URL && <HeroAppFrame />}
             </div>
-            {!process.env.NEXT_PUBLIC_APEX_SANDBOX_URL && (
-              <p className="num text-[11px] text-slate-500 mt-3 text-center">
-                The real APEX Enterprise interface — 23 modules, one system. Replaced by the live sandbox at launch.
-              </p>
-            )}
+          </Reveal>
+        </div>
+
+        {/* Trust signals */}
+        <div className="relative border-t border-mint-200 bg-white/60">
+          <dl className="max-w-content mx-auto px-5 lg:px-8 py-7 grid grid-cols-2 md:grid-cols-4 gap-6">
+            {TRUST_SIGNALS.map((s) => (
+              <div key={s.label}>
+                <dt className="sr-only">{s.label}</dt>
+                <dd className="num text-[28px] font-semibold text-teal-700 leading-none">{s.value}</dd>
+                <dd className="text-[13px] text-slate-500 mt-1.5 leading-snug">{s.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ---------- THE PLATFORM ---------- */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="max-w-content mx-auto px-5 lg:px-8">
+          <Reveal>
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+              <div className="max-w-2xl">
+                <p className="eyebrow mb-4">One platform · 23 modules</p>
+                <h2 className="font-display font-semibold text-[clamp(1.9rem,3.2vw,2.75rem)] leading-tight text-ink">
+                  Everything between the lead and the payout.
+                </h2>
+                <p className="text-[17px] leading-relaxed text-slate-600 mt-5">
+                  Replace the CRM, the loan tracker, the payout workbook and the audit folder with
+                  one system built for companies that source deals and fund them with investor capital.
+                </p>
+              </div>
+              <div className="flex gap-3 shrink-0">
+                <Link href="/platform" className="btn btn-teal">See all 23 modules</Link>
+                <Link href="/tour" className="btn btn-outline">Take the tour</Link>
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {PLATFORM_HIGHLIGHTS.map((p, i) => (
+              <Reveal key={p.title} delay={(i % 3) * 60}>
+                <div className="h-full rounded-2xl border border-slate-200 bg-white p-6 transition-colors hover:border-mint-300 hover:bg-mint-50">
+                  <div className="w-10 h-10 rounded-xl bg-mint-100 text-teal-600 flex items-center justify-center mb-4">
+                    <Icon name={p.icon} />
+                  </div>
+                  <h3 className="text-[16.5px] font-semibold text-ink">{p.title}</h3>
+                  <p className="text-[14.5px] leading-relaxed text-slate-600 mt-2">{p.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal>
+            <p className="mt-10 text-[13.5px] text-slate-500 text-center">
+              <span className="font-semibold text-slate-700">Connects to</span>{" "}
+              {INTEGRATIONS.map((x) => x.name).join(" · ")}
+            </p>
           </Reveal>
         </div>
       </section>
 
       {/* ---------- THE DIFFERENTIATOR — settlement moment ---------- */}
-      <section className="bg-white py-24 lg:py-32">
+      <section className="bg-mint-50 border-y border-mint-200 py-20 lg:py-28">
         <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
           <Reveal>
             <p className="eyebrow mb-4">The differentiator</p>
-            <h2 className="font-display font-semibold text-section text-ink leading-tight">
+            <h2 className="font-display font-semibold text-[clamp(1.9rem,3.2vw,2.75rem)] text-ink leading-tight">
               The moment a deal settles, every investor&apos;s return calculates itself.
             </h2>
-            <p className="text-[17px] leading-relaxed text-slate-600 mt-6">
-              Inside the platform is a settlement engine that understands the difference between the
-              company that sources the deal and the investors who fund it. When a deal settles, it
-              applies each investor&apos;s model automatically — 50/50 profit split or fixed return,
-              penalty and reward rates included — and shows your retained margin. No formula in a head.
-              No hoping.
+            <p className="text-[17px] leading-relaxed text-slate-600 mt-5">
+              50/50 profit split or fixed return, penalty and reward rates included — applied per
+              investor, per deal, automatically. No formula in someone&apos;s head. No recalculating
+              fourteen splits by hand.
             </p>
             <ul className="mt-6 space-y-2.5">
               {[
-                "Automatic payout schedule published to the investor ledger",
-                "WF-107 notifies every fund partner via WhatsApp",
+                "Payout schedule published straight to the investor ledger",
+                "Every fund partner notified on WhatsApp (WF-107)",
                 "Your retained margin visible in the same schedule",
               ].map((b) => (
                 <li key={b} className="flex gap-3 text-[15px] text-slate-700">
-                  <span className="text-teal-600 font-bold">✓</span>{b}
+                  <span className="text-teal-500 font-bold">✓</span>{b}
                 </li>
               ))}
             </ul>
-            <Link href="/calculator" className="btn btn-teal mt-8">Try it on your own numbers</Link>
+            <Link href="/calculator" className="btn btn-teal mt-8">
+              Try it on your own numbers
+              <Arrow />
+            </Link>
           </Reveal>
           <Reveal delay={120}>
             <PayoutDemo />
@@ -133,121 +191,93 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------- HONEST STATEMENT (compact — was its own full section) ---------- */}
-      <section className="bg-navy-950 pt-20 pb-14 lg:pt-24 lg:pb-16">
-        <div className="max-w-content mx-auto px-5 lg:px-8">
+      {/* ---------- WHO IT'S FOR + PROOF ---------- */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-14">
           <Reveal>
-            <p className="eyebrow mb-6">The honest statement</p>
-            <blockquote className="font-display text-[clamp(1.4rem,2.6vw,2.25rem)] font-medium text-white leading-[1.2] max-w-3xl">
-              &ldquo;{HONEST_STATEMENT}&rdquo;
-            </blockquote>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ---------- IS THIS YOU? ---------- */}
-      <section className="bg-white py-24 lg:py-32">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14">
-          <Reveal>
-            <p className="eyebrow mb-4">Is this you?</p>
-            <h2 className="font-display font-semibold text-section text-ink leading-tight">
-              {ICP_COPY.headline}
+            <p className="eyebrow mb-4">Built for you if…</p>
+            <h2 className="font-display font-semibold text-[clamp(1.7rem,3vw,2.5rem)] text-ink leading-tight">
+              You source the deal. Your investors fund it. You run everything in between.
             </h2>
-            <p className="text-[17px] leading-relaxed text-slate-600 mt-6">{ICP_COPY.body}</p>
-            <Link href="/platform" className="btn btn-teal mt-8">Explore the platform</Link>
+            <ul className="mt-7 space-y-3">
+              {ICP_COPY.who.map((w) => (
+                <li key={w} className="flex gap-3 text-[15px] text-slate-700">
+                  <span className="text-teal-500 font-bold">✓</span>{w}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-[13.5px] text-slate-500 leading-relaxed">
+              <span className="font-semibold text-slate-600">Not a fit</span> if you fund 100% of every
+              deal yourself, lend as a retail bank, or run microfinance.
+            </p>
           </Reveal>
-          <div className="space-y-3">
-            <Reveal delay={80}>
-              <div className="rounded-2xl border border-teal-600/40 bg-teal-50 p-6">
-                <p className="text-[13px] font-semibold uppercase tracking-wide text-teal-800 mb-4">Built for you if…</p>
-                <ul className="space-y-3">
-                  {ICP_COPY.who.map((w) => (
-                    <li key={w} className="flex gap-3 text-[15px] text-teal-900">
-                      <span className="text-teal-600 font-bold">✓</span>{w}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-            <Reveal delay={160}>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                <p className="text-[13px] font-semibold uppercase tracking-wide text-slate-500 mb-4">Not the platform for you if…</p>
-                <ul className="space-y-3">
-                  {ICP_COPY.whoNot.map((w) => (
-                    <li key={w} className="flex gap-3 text-[15px] text-slate-500">
-                      <span className="text-slate-300 font-bold">✕</span>{w}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
 
-      {/* ---------- GO DEEPER — links out to dedicated pages instead of repeating them here ---------- */}
-      <section className="bg-slate-50 py-14 lg:py-16 border-y border-slate-200">
-        <div className="max-w-content mx-auto px-5 lg:px-8">
-          <Reveal>
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
-              <div>
-                <p className="eyebrow mb-2">Want the full picture?</p>
-                <p className="text-[15.5px] text-slate-600 max-w-xl leading-relaxed">
-                  The before/after shift, what changes in your first week, the onboarding
-                  plan, and the honest platform comparison — laid out in full on one page.
-                </p>
-              </div>
-              <Link href="/why-apex" className="btn btn-teal shrink-0 self-start sm:self-auto">
-                See the full case for APEX
-              </Link>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[13.5px]">
-              <Link href="/platform" className="text-slate-500 underline underline-offset-4 hover:text-teal-700">All 23 modules on the platform page</Link>
-              <Link href="/for-fund-partners" className="text-slate-500 underline underline-offset-4 hover:text-teal-700">The fund partner view</Link>
-              <Link href="/for-accountants" className="text-slate-500 underline underline-offset-4 hover:text-teal-700">The auditor&apos;s view</Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ---------- TESTIMONIAL ---------- */}
-      <section className="bg-white pb-8 lg:pb-10">
-        <div className="max-w-content mx-auto px-5 lg:px-8">
-          <Reveal>
-            <div className="border-t border-slate-200 pt-16">
-              <p className="eyebrow mb-8">In production</p>
-              <blockquote className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-medium text-ink leading-[1.2] max-w-4xl">
+          <Reveal delay={120}>
+            <figure className="h-full rounded-3xl bg-mint-100 border border-mint-200 p-7 sm:p-9 flex flex-col">
+              <p className="eyebrow mb-5">In production</p>
+              <blockquote className="font-display text-[clamp(1.25rem,2vw,1.6rem)] font-medium text-ink leading-snug">
                 &ldquo;{TESTIMONIAL.quote}&rdquo;
               </blockquote>
-            <p className="text-[15px] text-slate-500 mt-6 font-medium">
-              — {TESTIMONIAL.attribution}
-            </p>
-            <p className="text-[13.5px] text-slate-500 mt-3 max-w-2xl leading-relaxed">
-              Full case study — with the client&apos;s name and numbers — available on request, and
-              our first enterprise client takes reference calls with qualified prospects.
-            </p>
-            </div>
-            <dl className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mt-14 border-t border-slate-200 pt-10">
-              {TESTIMONIAL.stats.map((s) => (
-                <div key={s.label}>
-                  <dd className="num text-3xl text-teal-700">{s.value}</dd>
-                  <dd className="text-[13.5px] text-slate-500 mt-2 leading-snug">{s.label}</dd>
-                </div>
-              ))}
-            </dl>
+              <figcaption className="text-[14px] text-slate-600 mt-5 font-medium">
+                — {TESTIMONIAL.attribution}
+              </figcaption>
+              <dl className="grid grid-cols-2 gap-x-6 gap-y-6 mt-8 pt-7 border-t border-mint-300/70">
+                {TESTIMONIAL.stats.map((s) => (
+                  <div key={s.label}>
+                    <dd className="num text-[26px] font-semibold text-teal-700 leading-none">{s.value}</dd>
+                    <dd className="text-[13px] text-slate-600 mt-1.5 leading-snug">{s.label}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="text-[12.5px] text-slate-500 mt-6">
+                Full case study and reference calls available to qualified prospects.
+              </p>
+            </figure>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ---------- GO LIVE ---------- */}
+      <section className="bg-slate-50 border-y border-slate-200 py-20 lg:py-24">
+        <div className="max-w-content mx-auto px-5 lg:px-8">
+          <Reveal>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-5">
+              <div className="max-w-2xl">
+                <p className="eyebrow mb-4">Already built · live in 60 days</p>
+                <h2 className="font-display font-semibold text-[clamp(1.7rem,3vw,2.5rem)] text-ink leading-tight">
+                  No development project. Just your book, onboarded.
+                </h2>
+              </div>
+              <Link href="/why-apex" className="text-[14.5px] font-semibold text-teal-600 hover:text-teal-700 inline-flex items-center gap-1.5 shrink-0">
+                The full case for APEX <Arrow />
+              </Link>
+            </div>
+          </Reveal>
+          <ol className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {GO_LIVE_STEPS.map((s, i) => (
+              <Reveal key={s.title} delay={i * 60}>
+                <li className="h-full rounded-2xl bg-white border border-slate-200 p-6">
+                  <p className="num text-[13px] font-semibold text-teal-500">0{i + 1}</p>
+                  <h3 className="text-[16px] font-semibold text-ink mt-2">{s.title}</h3>
+                  <p className="text-[14px] leading-relaxed text-slate-600 mt-1.5">{s.body}</p>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
         </div>
       </section>
 
       {/* ---------- FAQ ---------- */}
-      <section className="bg-white py-24 lg:py-32">
-        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-[minmax(0,340px)_1fr] gap-14">
+      <section className="bg-white py-20 lg:py-28">
+        <div className="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-[minmax(0,340px)_1fr] gap-12 lg:gap-14">
           <div className="lg:sticky lg:top-24 self-start">
             <Reveal>
               <p className="eyebrow mb-4">Questions</p>
-              <h2 className="font-display font-semibold text-section text-ink">Asked the way you&apos;d ask them.</h2>
-              <p className="text-slate-500 mt-5 text-[15px] leading-relaxed">
-                No fine print games. If it isn&apos;t answered here, the walkthrough will answer it in 20 minutes.
+              <h2 className="font-display font-semibold text-[clamp(1.7rem,3vw,2.5rem)] text-ink leading-tight">
+                Asked the way you&apos;d ask them.
+              </h2>
+              <p className="text-slate-500 mt-4 text-[15px] leading-relaxed">
+                Anything not answered here, the walkthrough answers in 20 minutes.
               </p>
             </Reveal>
           </div>
@@ -257,30 +287,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------- FINAL CTA (urgency lane folded in) ---------- */}
-      <section className="section-dark py-24 lg:py-32">
-        <div className="max-w-content mx-auto px-5 lg:px-8 text-center">
+      {/* ---------- FINAL CTA ---------- */}
+      <section className="bg-white pb-20 lg:pb-28">
+        <div className="max-w-content mx-auto px-5 lg:px-8">
           <Reveal>
-            <p className="eyebrow mb-4">When it&apos;s urgent</p>
-            <h2 className="font-display font-semibold text-[clamp(2rem,4vw,3.4rem)] text-white leading-tight max-w-3xl mx-auto">
-              Your payout formula went on leave. Your next settlement is in four days.
-            </h2>
-            <p className="text-slate-400 mt-6 max-w-xl mx-auto text-[16px] leading-relaxed">
-              Skip the tour — import your book and see your splits now. Or book 20 minutes and
-              we&apos;ll walk your deals through APEX with you, live — origination, risk, committee,
-              disbursement, collections, and your investor payouts calculated in front of you.
-            </p>
-            <div className="mt-9 flex flex-col sm:flex-row justify-center gap-3.5" data-suppress-sticky>
-              <Link href="/import" className="btn btn-teal !px-8 !py-4 !text-[16px]">
-                Import your book now
-              </Link>
-              <Link href="/book" className="btn btn-primary !px-8 !py-4 !text-[16px]">
-                Book my walkthrough
-              </Link>
+            <div className="relative overflow-hidden rounded-3xl border border-mint-300 px-6 py-14 sm:px-12 lg:py-16 text-center"
+              style={{ background: "radial-gradient(700px 300px at 50% -20%, rgba(183,228,194,0.9), transparent 70%), #eef7f1" }}>
+              <h2 className="font-display font-semibold text-[clamp(1.8rem,3.6vw,3rem)] text-ink leading-tight max-w-3xl mx-auto">
+                Your next settlement shouldn&apos;t depend on one person&apos;s spreadsheet.
+              </h2>
+              <p className="text-slate-600 mt-5 max-w-xl mx-auto text-[16px] leading-relaxed">
+                Book 20 minutes and we&apos;ll run your own deals through APEX, live — investor payouts
+                calculated in front of you. Or import your book and see it yourself now.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3" data-suppress-sticky>
+                <Link href="/book" className="btn btn-primary !px-8 !py-4 !text-[16px]">
+                  Book my walkthrough
+                </Link>
+                <Link href="/import" className="btn btn-outline !px-8 !py-4 !text-[16px]">
+                  Import your book now
+                </Link>
+              </div>
+              <p className="text-[13px] text-slate-500 mt-6">
+                Platform already built · 90-day warranty after every deployment · POPIA &amp; NCA ready
+              </p>
             </div>
-            <p className="text-[13.5px] text-slate-400 mt-6 max-w-lg mx-auto leading-relaxed">
-              Platform already built · 90-day warranty after every deployment · 1 enterprise tenant live in production
-            </p>
           </Reveal>
         </div>
       </section>

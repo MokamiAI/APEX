@@ -27,3 +27,6 @@ Thumbs.db
 
 # vercel
 .vercel
+
+# ad-hoc reference screenshots (QA/verification, not app source)
+/screenshots

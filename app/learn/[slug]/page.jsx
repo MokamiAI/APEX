@@ -104,14 +104,14 @@ export default function LearnPage({ params }) {
       </section>
 
       {/* CTA */}
-      <section className="bg-navy-950 py-16 lg:py-20">
+      <section className="section-dark py-16 lg:py-20">
         <div className="max-w-content mx-auto px-5 lg:px-8">
           <Reveal>
-            <div className="bg-navy-900 border border-navy-700 rounded-2xl p-8 lg:p-10 grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+            <div className="bg-white border border-slate-200 shadow-sm rounded-2xl p-8 lg:p-10 grid lg:grid-cols-[1fr_auto] gap-8 items-center">
               <div className="flex gap-5 items-start">
                 <div className="w-12 h-12 shrink-0 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d={ICON_PATHS[cta.icon]} stroke="#6bc490" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d={ICON_PATHS[cta.icon]} stroke="#2f7a52" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 <div>
